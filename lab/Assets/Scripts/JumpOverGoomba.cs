@@ -6,14 +6,14 @@ using TMPro.Examples;
 
 public class JumpOverGoomba : MonoBehaviour
 {
-    public GameObject enemy;
+    public Transform enemyLocation;
     public TextMeshProUGUI scoreText;
     private bool onGroundState;
 
-    [System.NonSerialized]
-    public int score = 0;   // variables under System.NonSerialized will not appear in inspector
 
-    private bool countScoreState = false;
+    private GameObject gameControl;
+    private bool countScoreState = true;
+    private float score;
     public Vector3 boxSize;
     public float maxDistance;
     public LayerMask layerMask;
@@ -21,6 +21,7 @@ public class JumpOverGoomba : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameControl = GameObject.Find("GameControl");
         
     }
 
@@ -35,20 +36,23 @@ public class JumpOverGoomba : MonoBehaviour
         // mario jumps
         if (Input.GetKeyDown("space") && onGroundCheck())
         {
-            onGroundState = false;
+            
             countScoreState = true;
+            if (onGroundCheck())
+            {
+                onGroundState = false;
+            }
         }
 
         // when jumping, and Goomba is near Mario and we havent registered our score
         if (!onGroundState && countScoreState)
         {
-            if (Mathf.Abs(transform.position.x - enemy.transform.position.x) < 0.5f)
+            if (Mathf.Abs(transform.position.x - enemyLocation.position.x) < 0.1f && transform.position.y > enemyLocation.position.y)
             {
                 countScoreState = false;
-                score++;
-                scoreText.text = "Score: " + score.ToString();
-                Debug.Log(score);
-            }
+                gameControl.GetComponent<GameControl>().addScore();
+                score = gameControl.GetComponent<GameControl>().score;
+            }   
         }
 
     }

@@ -13,12 +13,14 @@ public class PlayerMovement : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject enemies;
     public JumpOverGoomba jumpOverGoomba;
-    public AudioClip marioDeath;
+    
     public float deathImpulse = 15;
     public Transform gameCamera;
 
     // for audio
     public AudioSource marioAudio;
+    public AudioClip marioDeath;
+    public AudioClip teleportingAudio;
 
     // state
     [System.NonSerialized]
@@ -32,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer marioSprite;
     private bool faceRightState = true;
     private GameObject gameControl;
+    private bool isTeleporting = false;
+    private float teleportDelay = 1.3f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
                 
         }
 
-        if (Input.GetKeyDown("d") && !faceRightState)
+        if (Input.GetKeyDown("d") && !faceRightState )
         {
             faceRightState = true;
             marioSprite.flipX = false;
@@ -73,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Pipe") && !onGroundState)
+        if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Pipe") || col.gameObject.CompareTag("PipeTeleport") && !onGroundState)
         {
             onGroundState = true;
             // update animator state
@@ -85,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (alive)
+        if (alive && !isTeleporting)
         {
             float moveHorizontal = Input.GetAxisRaw("Horizontal");
 
@@ -110,6 +115,16 @@ public class PlayerMovement : MonoBehaviour
                 onGroundState = false;
                 // update animator state
                 marioAnimator.SetBool("onGround", onGroundState);
+            }
+        }
+
+        else if (isTeleporting)
+        {
+            teleportDelay -= Time.deltaTime;
+            if (teleportDelay < 0)
+            {
+                teleportDelay = 1.2f;
+                SceneManager.LoadScene(1);
             }
         }
 
@@ -138,6 +153,17 @@ public class PlayerMovement : MonoBehaviour
             marioAudio.PlayOneShot(marioDeath);
             alive = false;
         }
+
+        if (other.gameObject.CompareTag("PipeTeleport"))
+        {
+            marioAudio.PlayOneShot(teleportingAudio);
+            isTeleporting = true;
+            other.GetComponent<BoxCollider2D>().enabled = false;
+            marioBody.velocity = Vector2.zero;
+            marioBody.velocity = new Vector2(0, -0.05f);
+
+            
+        }
     }
 
     void PlayJumpSound()
@@ -162,10 +188,10 @@ public class PlayerMovement : MonoBehaviour
             eachChild.transform.position = eachChild.GetComponent<GoombaMovement>().startPosition;
         }
         // reset score
-        jumpOverGoomba.score = 0;
+        gameControl.GetComponent<GameControl>().score = 0;
 
         // reset camera position
-        gameCamera.position = new Vector3(0, 0, -10);
+        gameCamera.position = new Vector3(3.45f, 2.03f, -10f);
 
         // reset animation
         marioAnimator.SetTrigger("gameRestart");
