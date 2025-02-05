@@ -89,7 +89,7 @@ public class GameControl : Singleton<GameControl>
                 //gameOverMenuPanel.SetActive(false);
                 restartButton.SetActive(true);
                 scoreTextObject.SetActive(true);
-                scoreTextGUI.text = "Score: " + score.ToString();
+                scoreTextGUI.text = "SCORE: " + score.ToString();
             }
         }
 

@@ -33,7 +33,7 @@ public class GameOverMenu : MonoBehaviour
             {
                 gameOverMenuPanel.SetActive(true);
                 score = gameControl.GetComponent<GameControl>().score;
-                gameOverScoreText.text = "Score: " + score.ToString();
+                gameOverScoreText.text = "SCORE: " + score.ToString();
             }
             else if (!gameOver)
             {
