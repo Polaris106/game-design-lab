@@ -8,7 +8,7 @@ public class PipeMovement : MonoBehaviour
 
     private bool startMoving = false;
     private GameObject gameControl;
-    private GameObject player;
+    private GameObject flappyBird;
     private bool isAlive;
     private bool gameStart;
 
@@ -16,8 +16,8 @@ public class PipeMovement : MonoBehaviour
     void Start()
     {
         gameControl = GameObject.Find("GameControl");
-        player = GameObject.FindWithTag("Player");
-        isAlive = player.GetComponent<FlappyBirdMovement>().isAlive;
+        flappyBird = GameObject.Find("FlappyBird");
+        isAlive = flappyBird.GetComponent<FlappyBirdMovement>().isAlive;
     }
 
     // Update is called once per frame

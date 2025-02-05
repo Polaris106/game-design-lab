@@ -332,6 +332,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: FlappyBirdCoin
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 208
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae92c17b2d8d144c97de8e35f7c0fa3
+      internalID: 889456661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -348,6 +369,7 @@ TextureImporter:
       FlappyBird-flying1: 671355236
       FlappyBird-flying2: 1441403179
       FlappyBird-flying3: 47548296
+      FlappyBirdCoin: 889456661
       GameOverText: 1661846994
       Ground: -554340268
       PauseButton: -339496871

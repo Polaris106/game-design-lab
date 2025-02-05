@@ -295,6 +295,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &65128193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 829405950}
+    m_Modifications:
+    - target: {fileID: 1159575517737355513, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928278933878280331, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Name
+      value: FlappyBirdCoin (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.2450256
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8208232
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08061894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+--- !u!4 &65128194 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+  m_PrefabInstance: {fileID: 65128193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &73905369
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +467,68 @@ RectTransform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4846546212199352295, guid: a85d3ef38e99d2a4787a6ae012e66e61, type: 3}
   m_PrefabInstance: {fileID: 941343965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &293507401
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 829405950}
+    m_Modifications:
+    - target: {fileID: 5928278933878280331, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Name
+      value: FlappyBirdCoin (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.784979
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08082324
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08061894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+--- !u!4 &293507402 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+  m_PrefabInstance: {fileID: 293507401}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &322679145
 PrefabInstance:
@@ -581,6 +709,130 @@ MonoBehaviour:
   gameStart: 0
   gameOver: 0
   gameOverMenuPanel: {fileID: 0}
+--- !u!1001 &491165094
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 829405950}
+    m_Modifications:
+    - target: {fileID: 5928278933878280331, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Name
+      value: FlappyBirdCoin (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.31498
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.0591767
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08061894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+--- !u!4 &491165095 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+  m_PrefabInstance: {fileID: 491165094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &546547659
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 829405950}
+    m_Modifications:
+    - target: {fileID: 5928278933878280331, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Name
+      value: FlappyBirdCoin (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.13498
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.1333942
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08061894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+--- !u!4 &546547660 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+  m_PrefabInstance: {fileID: 546547659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &787011273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -685,6 +937,17 @@ Transform:
   - {fileID: 1855072694}
   - {fileID: 2130671251}
   - {fileID: 1245656219}
+  - {fileID: 843014392476737451}
+  - {fileID: 862817763}
+  - {fileID: 1451014846}
+  - {fileID: 2143218506}
+  - {fileID: 546547660}
+  - {fileID: 293507402}
+  - {fileID: 65128194}
+  - {fileID: 1907719190}
+  - {fileID: 2035213168}
+  - {fileID: 1408200254}
+  - {fileID: 491165095}
   - {fileID: 10700892}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -749,6 +1012,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af7fe6f3dfdba594d9fc7dd544e8a164, type: 3}
+--- !u!1001 &862817762
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 829405950}
+    m_Modifications:
+    - target: {fileID: 5928278933878280331, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Name
+      value: FlappyBirdCoin (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -35.772778
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7133942
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08061894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+--- !u!4 &862817763 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+  m_PrefabInstance: {fileID: 862817762}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &941343965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -892,7 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6602978494882022386, guid: af7fe6f3dfdba594d9fc7dd544e8a164, type: 3}
       propertyPath: m_Size.x
-      value: 0.8438475
+      value: 0.06806101
       objectReference: {fileID: 0}
     - target: {fileID: 6602978494882022386, guid: af7fe6f3dfdba594d9fc7dd544e8a164, type: 3}
       propertyPath: m_Size.y
@@ -900,7 +1225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6602978494882022386, guid: af7fe6f3dfdba594d9fc7dd544e8a164, type: 3}
       propertyPath: m_Offset.x
-      value: -0.019684851
+      value: -0.005760491
       objectReference: {fileID: 0}
     - target: {fileID: 6602978494882022386, guid: af7fe6f3dfdba594d9fc7dd544e8a164, type: 3}
       propertyPath: m_Offset.y
@@ -1229,6 +1554,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302906295}
   m_CullTransparentMesh: 1
+--- !u!1001 &1408200253
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 829405950}
+    m_Modifications:
+    - target: {fileID: 1159575517737355513, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928278933878280331, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Name
+      value: FlappyBirdCoin (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.7450256
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8208232
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08061894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+--- !u!4 &1408200254 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+  m_PrefabInstance: {fileID: 1408200253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1423831860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1290,6 +1681,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af7fe6f3dfdba594d9fc7dd544e8a164, type: 3}
+--- !u!1001 &1451014845
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 829405950}
+    m_Modifications:
+    - target: {fileID: 5928278933878280331, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Name
+      value: FlappyBirdCoin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.392778
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.63339424
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08061894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+--- !u!4 &1451014846 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+  m_PrefabInstance: {fileID: 1451014845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1466651068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,6 +2512,7 @@ MonoBehaviour:
   moveableObjects: {fileID: 829405950}
   flappyBirdAudio: {fileID: 1793350563}
   teleportingAudio: {fileID: 8300000, guid: b520e6b32619c490a934225b9b162dc2, type: 3}
+  coinAudio: {fileID: 8300000, guid: d885ffc842af744d89f7d595ffcc176a, type: 3}
 --- !u!82 &1793350563
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2355,6 +2809,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855190772}
   m_CullTransparentMesh: 1
+--- !u!1001 &1907719189
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 829405950}
+    m_Modifications:
+    - target: {fileID: 1159575517737355513, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928278933878280331, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Name
+      value: FlappyBirdCoin (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.9050217
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8208232
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08061894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+--- !u!4 &1907719190 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+  m_PrefabInstance: {fileID: 1907719189}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1986236560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2507,6 +3027,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999707229}
   m_CullTransparentMesh: 1
+--- !u!1001 &2035213167
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 829405950}
+    m_Modifications:
+    - target: {fileID: 1159575517737355513, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928278933878280331, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Name
+      value: FlappyBirdCoin (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.425022
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8208232
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08061894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+--- !u!4 &2035213168 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+  m_PrefabInstance: {fileID: 2035213167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2122576693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2654,6 +3240,130 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 916094398099781134, guid: af7fe6f3dfdba594d9fc7dd544e8a164, type: 3}
   m_PrefabInstance: {fileID: 2130671250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2143218505
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 829405950}
+    m_Modifications:
+    - target: {fileID: 5928278933878280331, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Name
+      value: FlappyBirdCoin (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.392778
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1066058
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08061894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+--- !u!4 &2143218506 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+  m_PrefabInstance: {fileID: 2143218505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &843014392476737450
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 829405950}
+    m_Modifications:
+    - target: {fileID: 5928278933878280331, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_Name
+      value: FlappyBirdCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.35278
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7133942
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08061894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+--- !u!4 &843014392476737451 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9021748129809839697, guid: 80426a5fd44ec2240a808f008e41c30d, type: 3}
+  m_PrefabInstance: {fileID: 843014392476737450}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3003226075754090249
 PrefabInstance:

@@ -13,7 +13,6 @@ public class JumpOverGoomba : MonoBehaviour
 
     private GameObject gameControl;
     private bool countScoreState = true;
-    private float score;
     public Vector3 boxSize;
     public float maxDistance;
     public LayerMask layerMask;
@@ -51,7 +50,6 @@ public class JumpOverGoomba : MonoBehaviour
             {
                 countScoreState = false;
                 gameControl.GetComponent<GameControl>().addScore();
-                score = gameControl.GetComponent<GameControl>().score;
             }   
         }
 

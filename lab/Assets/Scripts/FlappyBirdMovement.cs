@@ -11,6 +11,7 @@ public class FlappyBirdMovement : MonoBehaviour
     public Transform moveableObjects;
     public AudioSource flappyBirdAudio;
     public AudioClip teleportingAudio;
+    public AudioClip coinAudio;
 
     [System.NonSerialized]
     public bool isAlive = true;
@@ -19,6 +20,7 @@ public class FlappyBirdMovement : MonoBehaviour
     private GameObject gameControl;
     private bool moveForward = false;
     private bool isTeleporting = false;
+    private float teleportDelay = 1.3f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,11 +43,27 @@ public class FlappyBirdMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isAlive)
+        if (isAlive && !isTeleporting)
         {
             if (Input.GetKeyDown("space"))
             {
+                flappyBirdAudio.PlayOneShot(flappyBirdAudio.clip);
                 flappyBirdBody.velocity = Vector2.up * upSpeed;
+            }
+        }
+
+        else if (isAlive && isTeleporting)
+        {
+            teleportDelay -= Time.deltaTime;
+            if (teleportDelay < 0)
+            {
+                teleportDelay = 1.3f;
+                gameControl.GetComponent<GameControl>().currentScene = "MarioScene";
+                gameControl.GetComponent<GameControl>().prevScene = "FlappyBird";
+                gameControl.GetComponent<GameControl>().enteringScene = true;
+                isTeleporting = false;
+                SceneManager.LoadScene(0);
+
             }
         }
     }
@@ -56,9 +74,9 @@ public class FlappyBirdMovement : MonoBehaviour
         {
             gameControl.GetComponent<GameControl>().gameOver = true;
         }
+
         if (col.gameObject.name == "EndMoveTrigger")
         {
-            Debug.Log("collided with trigger");
             foreach (Transform child in moveableObjects)
             {
                 GameObject eachChild = child.gameObject;
@@ -68,6 +86,14 @@ public class FlappyBirdMovement : MonoBehaviour
             moveForward = true;
             
         }
+
+        if (col.gameObject.CompareTag("FlappyBirdCoin"))
+        {
+            gameControl.GetComponent<GameControl>().addScore();
+            flappyBirdAudio.PlayOneShot(coinAudio);
+            Destroy(col.gameObject);
+        }
+
         if (col.gameObject.CompareTag("PipeTeleport"))
         {
             flappyBirdAudio.PlayOneShot(teleportingAudio);

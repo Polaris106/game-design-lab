@@ -118,13 +118,18 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        else if (isTeleporting)
+        else if (alive && isTeleporting)
         {
             teleportDelay -= Time.deltaTime;
             if (teleportDelay < 0)
             {
-                teleportDelay = 1.2f;
+                teleportDelay = 1.3f;
+                gameControl.GetComponent<GameControl>().currentScene = "FlappyBird";
+                gameControl.GetComponent<GameControl>().prevScene = "MarioScene";
+                gameControl.GetComponent<GameControl>().enteringScene = true;
+                isTeleporting = false;
                 SceneManager.LoadScene(1);
+
             }
         }
 

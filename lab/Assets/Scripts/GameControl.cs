@@ -4,6 +4,7 @@ using TMPro.Examples;
 using UnityEngine;
 using TMPro;
 using TMPro.Examples;
+using UnityEngine.SceneManagement;
 
 public class GameControl : Singleton<GameControl>
 {
@@ -12,19 +13,25 @@ public class GameControl : Singleton<GameControl>
     public GameObject gameOverMenuPanel;
     public GameObject restartButton;
     public GameObject scoreTextObject;
+    
     public TextMeshProUGUI scoreTextGUI;
+    public string prevScene;
+    public string currentScene;
 
     [System.NonSerialized]
     public bool gameOver = false;
     public bool gameStart = false;
     public bool alrCalled = false;
+    public bool enteringScene = true;
     public int score = 0;   // variables under System.NonSerialized will not appear in inspector
+
+    private GameObject mario;
 
     override public void Awake()
     {
         base.Awake();
         Debug.Log("awake called");
-
+        
 
     }
 
@@ -34,33 +41,60 @@ public class GameControl : Singleton<GameControl>
         Time.timeScale = 0.0f;
         startButton.SetActive(true);
         superMarioLogo.SetActive(true);
+        currentScene = "MarioScene";
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameStart && !alrCalled)
+        if (mario == null)
         {
-            Time.timeScale = 1.0f;
-            startButton.SetActive(false);
-            superMarioLogo.SetActive(false);
-            alrCalled = true;
+            mario = GameObject.Find("Mario");
         }
-        if (gameOver && gameStart)
+        if (enteringScene && SceneManager.GetActiveScene().name == currentScene)
         {
-            Time.timeScale = 0.0f;
-            //gameOverMenuPanel.SetActive(true);
-            restartButton.SetActive(false);
-            scoreTextObject.SetActive(false);
+            Debug.Log("position changed");
+            switch (prevScene)
+            {
+                case "FlappyBird":
+                    mario.transform.position = new Vector3(-4.575f, -0.52f, 0.0f);
+                    break;
+                default:
+                    mario.transform.position = new Vector3(-1.5f, -2.5f, 0.0f);
+                    break;
+            }
+            enteringScene = false;
         }
-        else if (!gameOver && gameStart)
+
+        if (gameStart)
         {
-            Time.timeScale = 1.0f;
-            //gameOverMenuPanel.SetActive(false);
-            restartButton.SetActive(true);
-            scoreTextObject.SetActive(true);
-            scoreTextGUI.text = "Score: " + score.ToString();
+            if (!alrCalled)
+            {
+                Time.timeScale = 1.0f;
+                startButton.SetActive(false);
+                superMarioLogo.SetActive(false);
+                alrCalled = true;
+            }
+            if (gameOver)
+            {
+                Time.timeScale = 0.0f;
+                //gameOverMenuPanel.SetActive(true);
+                restartButton.SetActive(false);
+                scoreTextObject.SetActive(false);
+            }
+            else if (!gameOver)
+            {
+                Time.timeScale = 1.0f;
+                //gameOverMenuPanel.SetActive(false);
+                restartButton.SetActive(true);
+                scoreTextObject.SetActive(true);
+                scoreTextGUI.text = "Score: " + score.ToString();
+            }
         }
+
+
+
     }
 
     public void addScore()
