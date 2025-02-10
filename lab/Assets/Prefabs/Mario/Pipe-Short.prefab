@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 711790411147840950}
   - component: {fileID: 576807231055609052}
   - component: {fileID: 6980339796730560384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pipe-Head
   m_TagString: Pipe
   m_Icon: {fileID: 0}

@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     private GameObject gameControl;
     private bool isTeleporting = false;
     private float teleportDelay = 1.3f;
-
+    private int collisionLayerMask = (1 << 6) | (1 << 7) | (1 << 8);
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +84,17 @@ public class PlayerMovement : MonoBehaviour
             // update animator state
             marioAnimator.SetBool("onGround", onGroundState);
         }
+
+
+        // enable this the code below if you prefer to use layer mask for ground detection instead of tags, also disable the code above
+        // that use CompareTag
+
+        //if (((collisionLayerMask & (1 << col.transform.gameObject.layer)) > 0) & !onGroundState)
+        //{
+        //    onGroundState = true;
+        //    // update animator state
+        //    marioAnimator.SetBool("onGround", onGroundState);
+        //}
 
     }
 
@@ -179,27 +190,27 @@ public class PlayerMovement : MonoBehaviour
 
     public void ResetGame()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        // reset position
-        marioBody.transform.position = new Vector3(-1.5f, -2.5f, 0.0f);
-        // reset sprite direction
-        faceRightState = true;
-        marioSprite.flipX = false;
-        // reset score
-        scoreText.text = "Score: 0";
-        // reset Goomba
-        foreach (Transform eachChild in enemies.transform)
-        {
-            eachChild.transform.position = eachChild.GetComponent<GoombaMovement>().startPosition;
-        }
-        // reset score
-        gameControl.GetComponent<GameControl>().score = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //// reset position
+        //marioBody.transform.position = new Vector3(-1.5f, -2.5f, 0.0f);
+        //// reset sprite direction
+        //faceRightState = true;
+        //marioSprite.flipX = false;
+        //// reset score
+        //scoreText.text = "Score: 0";
+        //// reset Goomba
+        //foreach (Transform eachChild in enemies.transform)
+        //{
+        //    eachChild.transform.position = eachChild.GetComponent<GoombaMovement>().startPosition;
+        //}
+        //// reset score
+        //gameControl.GetComponent<GameControl>().score = 0;
 
-        // reset camera position
-        gameCamera.position = new Vector3(3.45f, 2.03f, -10f);
+        //// reset camera position
+        //gameCamera.position = new Vector3(3.45f, 2.03f, -10f);
 
-        // reset animation
-        marioAnimator.SetTrigger("gameRestart");
-        alive = true;
+        //// reset animation
+        //marioAnimator.SetTrigger("gameRestart");
+        //alive = true;
     }
 }

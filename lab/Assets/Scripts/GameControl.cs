@@ -58,7 +58,7 @@ public class GameControl : Singleton<GameControl>
             switch (prevScene)
             {
                 case "FlappyBird":
-                    mario.transform.position = new Vector3(-4.575f, -0.52f, 0.0f);
+                    mario.transform.position = new Vector3(24.41f, 9.05f, 0.0f);
                     break;
                 default:
                     mario.transform.position = new Vector3(-1.5f, -2.5f, 0.0f);
