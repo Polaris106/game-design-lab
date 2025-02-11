@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestionBoxController : MonoBehaviour
+public class BrickCoinController : MonoBehaviour
 {
 
     public Animator coinAnimator;
     public AudioSource questionBoxAudio;
     public AudioClip questionBoxSpawnCoin;
     public bool beenHit = false;
-    public Sprite disabledSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -37,14 +36,5 @@ public class QuestionBoxController : MonoBehaviour
 
 
 
-    }
-
-    public void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player") && beenHit)
-        {
-            GetComponent<SpriteRenderer>().sprite = disabledSprite;
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        }
     }
 }
