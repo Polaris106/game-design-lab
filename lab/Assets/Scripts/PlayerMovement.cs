@@ -272,4 +272,20 @@ public class PlayerMovement : MonoBehaviour
         //alive = true;
     }
 
+    public void GameRestart()
+    {
+        // reset position
+        marioBody.transform.position = new Vector3(-5.33f, -4.69f, 0.0f);
+        // reset sprite direction
+        faceRightState = true;
+        marioSprite.flipX = false;
+
+        // reset animation
+        marioAnimator.SetTrigger("gameRestart");
+        alive = true;
+
+        // reset camera position
+        gameCamera.position = new Vector3(0, 0, -10);
+    }
+
 }
