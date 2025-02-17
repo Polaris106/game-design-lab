@@ -17,12 +17,16 @@ public class GameControl : Singleton<GameControl>
     public TextMeshProUGUI scoreTextGUI;
     public string prevScene;
     public string currentScene;
+    public bool canFly = false;
+
+    public AudioSource gameAudio;
 
     [System.NonSerialized]
     public bool gameOver = false;
     public bool gameStart = false;
     public bool alrCalled = false;
     public bool enteringScene = true;
+
     public int score = 0;   // variables under System.NonSerialized will not appear in inspector
 
     private GameObject mario;
@@ -58,7 +62,7 @@ public class GameControl : Singleton<GameControl>
             switch (prevScene)
             {
                 case "FlappyBird":
-                    mario.transform.position = new Vector3(24.41f, 9.05f, 0.0f);
+                    mario.transform.position = new Vector3(6.3f, -0.5f, 0.0f);
                     break;
                 default:
                     mario.transform.position = new Vector3(-1.5f, -2.5f, 0.0f);
@@ -79,6 +83,7 @@ public class GameControl : Singleton<GameControl>
             if (gameOver)
             {
                 Time.timeScale = 0.0f;
+                
                 //gameOverMenuPanel.SetActive(true);
                 restartButton.SetActive(false);
                 scoreTextObject.SetActive(false);
@@ -89,7 +94,7 @@ public class GameControl : Singleton<GameControl>
                 //gameOverMenuPanel.SetActive(false);
                 restartButton.SetActive(true);
                 scoreTextObject.SetActive(true);
-                scoreTextGUI.text = "SCORE: " + score.ToString();
+                scoreTextGUI.text = "Score: " + score.ToString();
             }
         }
 

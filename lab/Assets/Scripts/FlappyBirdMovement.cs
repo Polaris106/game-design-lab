@@ -62,6 +62,8 @@ public class FlappyBirdMovement : MonoBehaviour
                 gameControl.GetComponent<GameControl>().prevScene = "FlappyBird";
                 gameControl.GetComponent<GameControl>().enteringScene = true;
                 isTeleporting = false;
+                gameControl.GetComponent<GameControl>().canFly = true;
+                Debug.Log("fly enabled");
                 SceneManager.LoadScene(0);
 
             }
