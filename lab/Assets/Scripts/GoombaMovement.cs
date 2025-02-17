@@ -60,4 +60,14 @@ public class GoombaMovement : MonoBehaviour
             collidedWithPipe = true;
         }
     }
+
+
+    public void GameRestart()
+    {
+        transform.localPosition = startPosition;
+        originalX = transform.position.x;
+        moveRight = -1;
+        ComputeVelocity();
+    }
+
 }
