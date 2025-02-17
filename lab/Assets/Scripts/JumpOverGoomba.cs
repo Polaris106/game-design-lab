@@ -16,14 +16,12 @@ public class JumpOverGoomba : MonoBehaviour
     public Vector3 boxSize;
     public float maxDistance;
     public LayerMask layerMask;
-    GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         gameControl = GameObject.Find("GameControl");
-        gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
-
+        
     }
 
     // Update is called once per frame
@@ -51,7 +49,7 @@ public class JumpOverGoomba : MonoBehaviour
             if (Mathf.Abs(transform.position.x - enemyLocation.position.x) < 0.1f && transform.position.y > enemyLocation.position.y)
             {
                 countScoreState = false;
-                gameManager.IncreaseScore();
+                gameControl.GetComponent<GameControl>().addScore();
             }   
         }
 
