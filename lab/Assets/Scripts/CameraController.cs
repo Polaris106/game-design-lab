@@ -45,10 +45,10 @@ public class CameraController : MonoBehaviour
         }
 
         // Check if player's y position exceeds half the camera's height and desiredY is within bounds
-        if (player.position.y > startY && desiredY < endY)
-        {
-            this.transform.position = new Vector3(this.transform.position.x, player.position.y, this.transform.position.z);
-        }
+        //if (player.position.y > startY && desiredY < endY)
+        //{
+        //    this.transform.position = new Vector3(this.transform.position.x, player.position.y, this.transform.position.z);
+        //}
 
     }
 }

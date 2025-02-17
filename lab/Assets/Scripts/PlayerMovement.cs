@@ -37,6 +37,10 @@ public class PlayerMovement : MonoBehaviour
     private bool isTeleporting = false;
     private float teleportDelay = 1.3f;
     private int collisionLayerMask = (1 << 6) | (1 << 7) | (1 << 8);
+    private float flySpeed = 15;
+    private bool moving = false;
+    private bool jumpedState = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,28 +56,27 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("a") && faceRightState)
+        marioAnimator.SetFloat("xSpeed", Mathf.Abs(marioBody.velocity.x));
+    }
+
+    void FlipMarioSprite(int value)
+    {
+        if (value == -1 && faceRightState)
         {
             faceRightState = false;
             marioSprite.flipX = true;
-            if (marioBody.velocity.x > 0.1f)
-            {
+            if (marioBody.velocity.x > 0.05f)
                 marioAnimator.SetTrigger("onSkid");
-            }
-                
+
         }
 
-        if (Input.GetKeyDown("d") && !faceRightState )
+        else if (value == 1 && !faceRightState)
         {
             faceRightState = true;
             marioSprite.flipX = false;
-            if (marioBody.velocity.x < -0.1f)
-            {
+            if (marioBody.velocity.x < -0.05f)
                 marioAnimator.SetTrigger("onSkid");
-            }
         }
-
-        marioAnimator.SetFloat("xSpeed", Mathf.Abs(marioBody.velocity.x));
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -81,6 +84,8 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Pipe") || col.gameObject.CompareTag("PipeTeleport") && !onGroundState)
         {
             onGroundState = true;
+            jumpedState = false;
+            maxSpeed = 20;
             // update animator state
             marioAnimator.SetBool("onGround", onGroundState);
         }
@@ -103,29 +108,31 @@ public class PlayerMovement : MonoBehaviour
 
         if (alive && !isTeleporting)
         {
-            float moveHorizontal = Input.GetAxisRaw("Horizontal");
-
-            if (Mathf.Abs(moveHorizontal) > 0)
+            if (moving)
             {
-                Vector2 movement = new Vector2(moveHorizontal, 0);
-                if (marioBody.velocity.magnitude < maxSpeed)
+                Move(faceRightState == true ? 1 : -1);
+            }
+
+            if (Input.GetMouseButton(1))
+            {
+                if (gameControl.GetComponent<GameControl>().canFly)
                 {
-                    marioBody.AddForce(movement * speed);
+                    maxSpeed = 10;
+                    jumpedState = false;
+
+                    Vector2 movement = new Vector2(0, 5);
+
+                    if (marioBody.velocity.y < 30)
+                    {
+                        marioBody.AddForce(movement * 10);
+                    }
+
+                    onGroundState = false;
+                    // update animator state
+                    marioAnimator.SetBool("isJumping", jumpedState);
+                    marioAnimator.SetTrigger("isFlying");
+                    marioAnimator.SetBool("onGround", onGroundState);
                 }
-            }
-
-            // stop mario's movement
-            if (Input.GetKeyUp("a") || Input.GetKeyUp("d"))
-            {
-                marioBody.velocity = Vector2.zero;
-            }
-
-            if (Input.GetKeyDown("space") && onGroundState)
-            {
-                marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
-                onGroundState = false;
-                // update animator state
-                marioAnimator.SetBool("onGround", onGroundState);
             }
         }
 
@@ -143,10 +150,58 @@ public class PlayerMovement : MonoBehaviour
 
             }
         }
+    }
 
-
+    void Move(int value)
+    {
+        Vector2 movement = new Vector2(value, 0);
+        // check if it doesn't go beyond maxSpeed
+        if (marioBody.velocity.magnitude < maxSpeed)
+        {
+            marioBody.AddForce(movement * speed);
+        }
 
     }
+
+    public void MoveCheck(int value)
+    {
+        if (value == 0)
+        {
+            moving = false;
+        }
+        else
+        {
+            FlipMarioSprite(value);
+            moving = true;
+            Move(value);
+        }
+    }
+
+    public void Jump()
+    {
+        if (alive && onGroundState)
+        {
+            // jump
+            marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
+            onGroundState = false;
+            jumpedState = true;
+            // update animator state
+            marioAnimator.SetBool("isJumping", jumpedState);
+            marioAnimator.SetBool("onGround", onGroundState);
+        }
+    }
+
+    public void JumpHold()
+    {
+        if (alive && jumpedState)
+        {
+            // jump higher
+            marioBody.AddForce(Vector2.up * upSpeed * 30, ForceMode2D.Force);
+            jumpedState = false;
+
+        }
+    }
+
 
     void GameOverScene()
     {
@@ -166,6 +221,7 @@ public class PlayerMovement : MonoBehaviour
             
             // play death animation
             marioAnimator.Play("Mario-Die");
+            gameControl.GetComponent<GameControl>().gameAudio.mute = true;
             marioAudio.PlayOneShot(marioDeath);
             alive = false;
         }
@@ -191,6 +247,8 @@ public class PlayerMovement : MonoBehaviour
     public void ResetGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameControl.GetComponent<GameControl>().gameAudio.mute = false;
+        gameControl.GetComponent<GameControl>().gameAudio.Play();
         //// reset position
         //marioBody.transform.position = new Vector3(-1.5f, -2.5f, 0.0f);
         //// reset sprite direction
@@ -213,4 +271,5 @@ public class PlayerMovement : MonoBehaviour
         //marioAnimator.SetTrigger("gameRestart");
         //alive = true;
     }
+
 }

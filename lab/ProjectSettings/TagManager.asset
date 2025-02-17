@@ -9,6 +9,7 @@ TagManager:
   - Pipe
   - PipeTeleport
   - FlappyBirdCoin
+  - Projectile
   layers:
   - Default
   - TransparentFX
