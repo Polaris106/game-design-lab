@@ -12,8 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public float upSpeed = 10;
     public TextMeshProUGUI scoreText;
     public GameObject enemies;
-    public JumpOverGoomba jumpOverGoomba;
-    
+    public JumpOverGoomba jumpOverGoomba; 
+    public bool onGroundState = true;
+
     public float deathImpulse = 15;
     public Transform gameCamera;
 
@@ -29,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     // for animation
     public Animator marioAnimator;
 
-    private bool onGroundState = true;
+
     private Rigidbody2D marioBody;
     private SpriteRenderer marioSprite;
     private bool faceRightState = true;
@@ -216,14 +217,19 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") && alive)
+        if (other.gameObject.CompareTag("Enemy") && alive && onGroundState)
         {
-            
             // play death animation
             marioAnimator.Play("Mario-Die");
             gameControl.GetComponent<GameControl>().gameAudio.mute = true;
             marioAudio.PlayOneShot(marioDeath);
             alive = false;
+        }
+
+        if (other.gameObject.CompareTag("GoombaWeakpoint") && alive && !onGroundState)
+        {
+            gameControl.GetComponent<GameControl>().addScore();
+            scoreText.text = "Score: " + gameControl.GetComponent<GameControl>().score;
         }
 
         if (other.gameObject.CompareTag("PipeTeleport"))

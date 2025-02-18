@@ -105,5 +105,6 @@ public class GameControl : Singleton<GameControl>
     public void addScore()
     {
         score++;
+        Debug.Log("Score: " + score);
     }
 }

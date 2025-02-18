@@ -86,7 +86,7 @@ public class ReimuMovement : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             TakeDamage(1);
-
         }
+
     }
 }

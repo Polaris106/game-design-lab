@@ -6,9 +6,12 @@ public class KanakoController : MonoBehaviour
 {
     
     public GameObject kanako;
-    public float maxHealth = 200;
+    public float currentHealth;
+    public GameObject autoBall;
+    public GameObject ShootingPoint1;
+    public GameObject ShootingPoint2;
 
-    private float currentHealth;
+    private float maxHealth = 400;
     private KanakoHealthBar healthBar;
     private float healthLost;
 
@@ -22,7 +25,15 @@ public class KanakoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentHealth == maxHealth)
+        {
+            autoBall.SetActive(true);
+        }
+        else if (currentHealth < 200)
+        {
+            ShootingPoint1.SetActive(true);
+            ShootingPoint2.SetActive(true);
+        }
     }
 
     public void TakeDamage(int damage)

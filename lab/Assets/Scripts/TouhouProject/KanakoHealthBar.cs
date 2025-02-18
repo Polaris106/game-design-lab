@@ -7,7 +7,7 @@ public class KanakoHealthBar : MonoBehaviour
 {
     public Slider hp_slider;
     public Slider delayed_hp_slider;
-    public float maxHealth = 100f;
+    public float maxHealth = 200f;
     public float currentHealth;
 
     private float lerp_speed = 0.05f;
