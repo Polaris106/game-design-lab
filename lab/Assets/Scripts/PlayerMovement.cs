@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource marioAudio;
     public AudioClip marioDeath;
     public AudioClip teleportingAudio;
+    public AudioClip slamGround;
 
     // state
     [System.NonSerialized]
@@ -199,6 +200,16 @@ public class PlayerMovement : MonoBehaviour
             marioBody.AddForce(Vector2.up * upSpeed * 30, ForceMode2D.Force);
             jumpedState = false;
 
+        }
+    }
+
+    public void Slam()
+    {
+        if (alive && !onGroundState)
+        {
+            marioBody.AddForce(Vector2.down * 35, ForceMode2D.Impulse);
+            jumpedState = false;
+            marioAudio.PlayOneShot(slamGround);
         }
     }
 

@@ -9,6 +9,20 @@ public class ActionManager : MonoBehaviour
     public UnityEvent jump;
     public UnityEvent jumpHold;
     public UnityEvent<int> moveCheck;
+    public UnityEvent slam;
+
+    public void OnSlamAction(InputAction.CallbackContext context)
+    {
+        if (context.started)
+            Debug.Log("Slam was started");
+        else if (context.performed)
+        {
+            Debug.Log("Slam was performed");
+            slam.Invoke();
+        }
+        else if (context.canceled)
+            Debug.Log("Slam was cancelled");
+    }
 
     public void OnJumpHoldAction(InputAction.CallbackContext context)
     {
