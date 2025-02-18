@@ -6314,6 +6314,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: bbcc7770a72095549a6edd5acd4372a4, type: 3}
     - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: slamGround
+      value: 
+      objectReference: {fileID: 8300000, guid: c738f1c61166b40e19d4d970e7b9c9df, type: 3}
+    - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
       propertyPath: marioAnimator
       value: 
       objectReference: {fileID: 7236265257272587208}
