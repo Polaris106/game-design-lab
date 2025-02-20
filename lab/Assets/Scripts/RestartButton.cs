@@ -36,6 +36,9 @@ public class RestartButton : MonoBehaviour
             case "FlappyBird":
                 player.GetComponent<FlappyBirdMovement>().ResetGame();
                 break;
+            case "Reimu":
+                player.GetComponent<ReimuMovement>().ResetGame();
+                break;
         }
         
         gameControl.GetComponent<GameControl>().gameOver = false;

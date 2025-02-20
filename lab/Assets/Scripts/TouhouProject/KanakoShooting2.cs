@@ -7,20 +7,26 @@ public class KanakoShooting2 : MonoBehaviour
     public GameObject proj_prefab;
     public KanakoController kanakoControl;
     public Animator kanakoAnimator;
+    public AudioSource ballAudio;
+    public AudioClip ballShootAudio;
 
     private float angle = 90f;
     private bool swingLeft;
-    private bool firedOnce;
+    private bool firedOnce = false;
 
     private Vector2 projectileMoveDirection;
     private GameObject proj;
 
+    private GameObject gameControl;
+    private GameControl gameControlScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        firedOnce = true;
-        kanakoAnimator.SetTrigger("skillActive");
-        StartShoot();
+        gameControl = GameObject.Find("GameControl");
+        gameControlScript = gameControl.GetComponent<GameControl>();
+
+
     }
 
     void Update()
@@ -31,8 +37,9 @@ public class KanakoShooting2 : MonoBehaviour
             StopShoot();
             firedOnce = false;
         }
-        else if (firedOnce == false)
+        else if (firedOnce == false && gameControlScript.gameStart)
         {
+            kanakoAnimator.SetTrigger("skillActive");
             StartShoot();
             firedOnce = true;
         }
@@ -45,6 +52,7 @@ public class KanakoShooting2 : MonoBehaviour
         Vector3 projMoveVector = new Vector3(projDirX, projDirY, 0f);
         Vector2 projDir = (projMoveVector - transform.position).normalized;
 
+        //ballAudio.PlayOneShot(ballShootAudio);
         SetProjectiles(projDir);
 
         angle += Random.Range(15f, 20f);

@@ -34,6 +34,10 @@ public class HUDManager : Singleton<HUDManager>
                 flyIcon.SetActive(false);
             }
         }
+        else if (currentScene == "TouhouProject")
+        {
+            gameObject.SetActive(false);
+        }
         else
         {
             skillsPanel.SetActive(false);

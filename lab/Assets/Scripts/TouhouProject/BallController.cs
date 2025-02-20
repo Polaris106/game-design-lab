@@ -10,7 +10,7 @@ public class BallController : MonoBehaviour
     public GameObject beam2;
 
     // Rotation speed in degrees per second
-    private float rotationSpeed = 25f;
+    private float rotationSpeed = 30f;
     private float moveSpeed = 3f;
 
     // Start is called before the first frame update
@@ -35,6 +35,10 @@ public class BallController : MonoBehaviour
                 beam2.SetActive(true);
             }
 
+        }
+        if (kanakoController.currentHealth <= 0)
+        {
+            gameObject.SetActive(false);
         }
     }
 }

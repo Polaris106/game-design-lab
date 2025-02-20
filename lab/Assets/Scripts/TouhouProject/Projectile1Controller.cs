@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile1Controller : MonoBehaviour
 {
+    private KanakoController kanakoController;
     private int damage = 1;
     private float move_speed;
 
@@ -13,7 +14,7 @@ public class Projectile1Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        kanakoController = GameObject.Find("Kanako").GetComponent<KanakoController>();
         move_speed = 2f;
     }
 
@@ -21,7 +22,7 @@ public class Projectile1Controller : MonoBehaviour
     void Update()
     {
         lifespan -= Time.deltaTime;
-        if (lifespan <= 0)
+        if (lifespan <= 0 || kanakoController.currentHealth <= 0)
         {
             Destroy(gameObject);
 

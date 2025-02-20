@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class KanakoShooting1 : MonoBehaviour
 {
-
     public GameObject projectile1_prefab;
     public KanakoController kanakoControl;
+    public AudioSource shootAudio;
+    public AudioClip shootSound;
 
     private int projectilesAmount;
 
@@ -17,11 +18,13 @@ public class KanakoShooting1 : MonoBehaviour
     private float shootDuration;
     private GameObject projectile1;
 
+
     // Start is called before the first frame update
     void Start()
     {
         coolDown = 2f;
         shootDuration = 0f;
+
     }
 
     void Update()
@@ -40,6 +43,7 @@ public class KanakoShooting1 : MonoBehaviour
         else if (!oneTime && shootDuration > 0)
         {
             StartShoot();
+            shootAudio.PlayOneShot(shootSound);
             oneTime = true;
             coolDown = 0.8f;
         }

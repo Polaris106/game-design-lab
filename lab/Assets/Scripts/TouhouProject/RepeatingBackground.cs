@@ -8,14 +8,19 @@ public class RepeatingBackground : MonoBehaviour
     private float groundVerticalLength;
     private Rigidbody2D rb2d;
     private float scrollSpeed = -1f;
+    private GameObject gameControl;
+    private GameControl gameControlScript;
+    private bool alrCalled = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameControl = GameObject.Find("GameControl");
+        gameControlScript = gameControl.GetComponent<GameControl>();
         groundCollider = GetComponent<BoxCollider2D>();
         groundVerticalLength = groundCollider.size.y;
         rb2d = GetComponent<Rigidbody2D>();
-        rb2d.velocity = new Vector2(0, scrollSpeed);
+
     }
 
     // Update is called once per frame
@@ -25,6 +30,12 @@ public class RepeatingBackground : MonoBehaviour
         {
             RepositionBackground();
         }
+        if (gameControlScript.gameStart && !alrCalled)
+        {
+            alrCalled = true;
+            rb2d.velocity = new Vector2(0, scrollSpeed);
+        }
+
     }
 
     private void RepositionBackground()

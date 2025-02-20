@@ -9,20 +9,23 @@ public class ReimuShooting : MonoBehaviour
     public GameObject projPrefab;
     public float projForce = 20f;
 
-    private float fireRate = 0.15f;
+    private float fireRate = 0.1f;
     private float canFire;
+    private GameObject gameControl;
+    private GameControl gameControlScript;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gameControl = GameObject.Find("GameControl");
+        gameControlScript = gameControl.GetComponent<GameControl>();
     }
 
     // Update is called once per frame
     void Update()
     {
         canFire += Time.deltaTime;
-        if (EnemyIsAlive())
+        if (EnemyIsAlive() && gameControlScript.gameStart)
         {
             if (canFire > fireRate)
             {

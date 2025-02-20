@@ -7,6 +7,8 @@ public class GoombaMovement : MonoBehaviour
     public Vector3 startPosition;
     public bool goombaIsAlive = true;
     public Animator goombaAnimator;
+    public AudioSource goombaAudio;
+    public AudioClip goombaDeathAudio;
 
     private float originalX;
     private float maxOffset = 5.0f;
@@ -70,6 +72,11 @@ public class GoombaMovement : MonoBehaviour
             Debug.Log("collided with pipe");
             collidedWithPipe = true;
         }
+    }
+
+    public void playDeathAudio()
+    {
+        goombaAudio.PlayOneShot(goombaDeathAudio);
     }
 
     public void Die()

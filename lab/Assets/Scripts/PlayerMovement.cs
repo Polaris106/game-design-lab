@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     private float flySpeed = 15;
     private bool moving = false;
     private bool jumpedState = false;
+    private string telePipeName;
 
 
     // Start is called before the first frame update
@@ -144,11 +145,26 @@ public class PlayerMovement : MonoBehaviour
             if (teleportDelay < 0)
             {
                 teleportDelay = 1.3f;
-                gameControl.GetComponent<GameControl>().currentScene = "FlappyBird";
-                gameControl.GetComponent<GameControl>().prevScene = "MarioScene";
-                gameControl.GetComponent<GameControl>().enteringScene = true;
-                isTeleporting = false;
-                SceneManager.LoadScene(1);
+                if (telePipeName == "Pipe-Teleport-FlappyBird")
+                {
+                    gameControl.GetComponent<GameControl>().currentScene = "FlappyBird";
+                    gameControl.GetComponent<GameControl>().prevScene = "MarioScene";
+                    gameControl.GetComponent<GameControl>().enteringScene = true;
+                    isTeleporting = false;
+                    gameControl.GetComponent<GameControl>().musicPlayed = false;
+                    SceneManager.LoadScene(1);
+                }
+                else if (telePipeName == "Pipe-Teleport-Touhou")
+                {
+                    gameControl.GetComponent<GameControl>().currentScene = "TouhouProject";
+                    gameControl.GetComponent<GameControl>().prevScene = "MarioScene";
+                    gameControl.GetComponent<GameControl>().enteringScene = true;
+                    gameControl.GetComponent<GameControl>().gameStart = false;
+                    isTeleporting = false;
+                    gameControl.GetComponent<GameControl>().musicPlayed = false;
+                    SceneManager.LoadScene(2);
+                }
+
 
             }
         }
@@ -245,13 +261,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.CompareTag("PipeTeleport"))
         {
+            telePipeName = other.gameObject.name;
             marioAudio.PlayOneShot(teleportingAudio);
             isTeleporting = true;
             other.GetComponent<BoxCollider2D>().enabled = false;
             marioBody.velocity = Vector2.zero;
             marioBody.velocity = new Vector2(0, -0.05f);
-
-            
         }
     }
 
@@ -289,20 +304,20 @@ public class PlayerMovement : MonoBehaviour
         //alive = true;
     }
 
-    public void GameRestart()
-    {
-        // reset position
-        marioBody.transform.position = new Vector3(-5.33f, -4.69f, 0.0f);
-        // reset sprite direction
-        faceRightState = true;
-        marioSprite.flipX = false;
+    //public void GameRestart()
+    //{
+    //    // reset position
+    //    marioBody.transform.position = new Vector3(-5.33f, -4.69f, 0.0f);
+    //    // reset sprite direction
+    //    faceRightState = true;
+    //    marioSprite.flipX = false;
 
-        // reset animation
-        marioAnimator.SetTrigger("gameRestart");
-        alive = true;
+    //    // reset animation
+    //    marioAnimator.SetTrigger("gameRestart");
+    //    alive = true;
 
-        // reset camera position
-        gameCamera.position = new Vector3(0, 0, -10);
-    }
+    //    // reset camera position
+    //    gameCamera.position = new Vector3(0, 0, -10);
+    //}
 
 }

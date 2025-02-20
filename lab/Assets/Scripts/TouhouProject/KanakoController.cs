@@ -10,30 +10,42 @@ public class KanakoController : MonoBehaviour
     public GameObject autoBall;
     public GameObject ShootingPoint1;
     public GameObject ShootingPoint2;
+    public Animator kanakoAnimator;
 
     private float maxHealth = 400;
     private KanakoHealthBar healthBar;
     private float healthLost;
+    private GameObject gameControl;
+    private GameControl gameControlScript;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar = GameObject.Find("KanakoHealthBar").GetComponent<KanakoHealthBar>();
+        
+        gameControl = GameObject.Find("GameControl");
+        gameControlScript = gameControl.GetComponent<GameControl>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth == maxHealth)
+
+        if (gameControlScript.gameStart)
         {
-            autoBall.SetActive(true);
+            kanakoAnimator.SetTrigger("skillActive");
+            healthBar = GameObject.Find("KanakoHealthBar").GetComponent<KanakoHealthBar>();
         }
-        else if (currentHealth < 200)
+        if (currentHealth < 200)
         {
             ShootingPoint1.SetActive(true);
             ShootingPoint2.SetActive(true);
         }
+    }
+
+    public void SetAutoBallActive()
+    {
+        autoBall.SetActive(true);
     }
 
     public void TakeDamage(int damage)
@@ -48,6 +60,11 @@ public class KanakoController : MonoBehaviour
         }
     }
 
+    public void ScorePoints(int points)
+    {
+        gameControlScript.score += points;
+    }
+
     void Die()
     {
         //gameObject.SetActive(false);
@@ -58,6 +75,7 @@ public class KanakoController : MonoBehaviour
     {
         if (col.gameObject.tag == "Projectile")
         {
+            ScorePoints(1);
             TakeDamage(1);
         }
     }
