@@ -17,12 +17,13 @@ public class GameOverMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameControl = GameObject.Find("GameControl");
     }
 
     // Update is called once per frame
     void Update()
     {
+
         gameOver = gameControl.GetComponent<GameControl>().gameOver;
         gameStart = gameControl.GetComponent<GameControl>().gameStart;
 

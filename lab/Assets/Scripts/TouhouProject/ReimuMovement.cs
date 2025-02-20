@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ReimuMovement : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class ReimuMovement : MonoBehaviour
     public float maxHp = 10f;
     public float currentHp;
     public TextMeshProUGUI healthText;
+    public Transform startingPosition;
+    public GameObject Boundary;
+    public GameObject SpeechBox;
 
     [System.NonSerialized]
     public bool isAlive = true;
@@ -24,6 +28,7 @@ public class ReimuMovement : MonoBehaviour
     private float moveSpeed = 4f;
     private float speedX = 2f;
     private float speedY = 2f;
+    private bool atStartingPos = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,11 +36,25 @@ public class ReimuMovement : MonoBehaviour
         currentHp = maxHp;
         gameControl = GameObject.Find("GameControl");
         reimuBody = gameObject.GetComponent<Rigidbody2D>();
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!atStartingPos)
+        {
+            float step = 2 * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, startingPosition.position, step);
+            if (transform.position == startingPosition.position)
+            {
+                atStartingPos = true;
+                SpeechBox.SetActive(true);
+                Boundary.SetActive(true);
+            }
+        }
+
         if (Input.GetKeyDown("a") && !facingLeft)
         {
             facingLeft = true;
@@ -77,8 +96,17 @@ public class ReimuMovement : MonoBehaviour
         currentHp -= damage;
         if (currentHp <= 0)
         {
-
+            gameControl.GetComponent<GameControl>().gameOver = true;
         }
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(0);
+        gameControl.GetComponent<GameControl>().currentScene = "MarioScene";
+        gameControl.GetComponent<GameControl>().prevScene = null;
+        // reset score
+        gameControl.GetComponent<GameControl>().score = 0;
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -86,7 +114,7 @@ public class ReimuMovement : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             TakeDamage(1);
-
         }
+
     }
 }

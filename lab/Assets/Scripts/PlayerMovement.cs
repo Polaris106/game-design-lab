@@ -12,8 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public float upSpeed = 10;
     public TextMeshProUGUI scoreText;
     public GameObject enemies;
-    public JumpOverGoomba jumpOverGoomba;
-    
+    public JumpOverGoomba jumpOverGoomba; 
+    public bool onGroundState = true;
+
     public float deathImpulse = 15;
     public Transform gameCamera;
 
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource marioAudio;
     public AudioClip marioDeath;
     public AudioClip teleportingAudio;
+    public AudioClip slamGround;
 
     // state
     [System.NonSerialized]
@@ -29,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     // for animation
     public Animator marioAnimator;
 
-    private bool onGroundState = true;
+
     private Rigidbody2D marioBody;
     private SpriteRenderer marioSprite;
     private bool faceRightState = true;
@@ -40,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     private float flySpeed = 15;
     private bool moving = false;
     private bool jumpedState = false;
+    private string telePipeName;
 
 
     // Start is called before the first frame update
@@ -142,11 +145,26 @@ public class PlayerMovement : MonoBehaviour
             if (teleportDelay < 0)
             {
                 teleportDelay = 1.3f;
-                gameControl.GetComponent<GameControl>().currentScene = "FlappyBird";
-                gameControl.GetComponent<GameControl>().prevScene = "MarioScene";
-                gameControl.GetComponent<GameControl>().enteringScene = true;
-                isTeleporting = false;
-                SceneManager.LoadScene(1);
+                if (telePipeName == "Pipe-Teleport-FlappyBird")
+                {
+                    gameControl.GetComponent<GameControl>().currentScene = "FlappyBird";
+                    gameControl.GetComponent<GameControl>().prevScene = "MarioScene";
+                    gameControl.GetComponent<GameControl>().enteringScene = true;
+                    isTeleporting = false;
+                    gameControl.GetComponent<GameControl>().musicPlayed = false;
+                    SceneManager.LoadScene(1);
+                }
+                else if (telePipeName == "Pipe-Teleport-Touhou")
+                {
+                    gameControl.GetComponent<GameControl>().currentScene = "TouhouProject";
+                    gameControl.GetComponent<GameControl>().prevScene = "MarioScene";
+                    gameControl.GetComponent<GameControl>().enteringScene = true;
+                    gameControl.GetComponent<GameControl>().gameStart = false;
+                    isTeleporting = false;
+                    gameControl.GetComponent<GameControl>().musicPlayed = false;
+                    SceneManager.LoadScene(2);
+                }
+
 
             }
         }
@@ -202,6 +220,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Slam()
+    {
+        if (alive && !onGroundState)
+        {
+            marioBody.AddForce(Vector2.down * 35, ForceMode2D.Impulse);
+            jumpedState = false;
+            marioAudio.PlayOneShot(slamGround);
+        }
+    }
+
 
     void GameOverScene()
     {
@@ -216,9 +244,8 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") && alive)
+        if (other.gameObject.CompareTag("Enemy") && alive && onGroundState)
         {
-            
             // play death animation
             marioAnimator.Play("Mario-Die");
             gameControl.GetComponent<GameControl>().gameAudio.mute = true;
@@ -226,15 +253,20 @@ public class PlayerMovement : MonoBehaviour
             alive = false;
         }
 
+        if (other.gameObject.CompareTag("GoombaWeakpoint") && alive && !onGroundState)
+        {
+            gameControl.GetComponent<GameControl>().addScore();
+            scoreText.text = "Score: " + gameControl.GetComponent<GameControl>().score;
+        }
+
         if (other.gameObject.CompareTag("PipeTeleport"))
         {
+            telePipeName = other.gameObject.name;
             marioAudio.PlayOneShot(teleportingAudio);
             isTeleporting = true;
             other.GetComponent<BoxCollider2D>().enabled = false;
             marioBody.velocity = Vector2.zero;
             marioBody.velocity = new Vector2(0, -0.05f);
-
-            
         }
     }
 
@@ -271,5 +303,21 @@ public class PlayerMovement : MonoBehaviour
         //marioAnimator.SetTrigger("gameRestart");
         //alive = true;
     }
+
+    //public void GameRestart()
+    //{
+    //    // reset position
+    //    marioBody.transform.position = new Vector3(-5.33f, -4.69f, 0.0f);
+    //    // reset sprite direction
+    //    faceRightState = true;
+    //    marioSprite.flipX = false;
+
+    //    // reset animation
+    //    marioAnimator.SetTrigger("gameRestart");
+    //    alive = true;
+
+    //    // reset camera position
+    //    gameCamera.position = new Vector3(0, 0, -10);
+    //}
 
 }

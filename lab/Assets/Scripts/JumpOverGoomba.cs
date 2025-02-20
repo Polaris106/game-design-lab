@@ -43,15 +43,15 @@ public class JumpOverGoomba : MonoBehaviour
             }
         }
 
-        // when jumping, and Goomba is near Mario and we havent registered our score
-        if (!onGroundState && countScoreState)
-        {
-            if (Mathf.Abs(transform.position.x - enemyLocation.position.x) < 0.1f && transform.position.y > enemyLocation.position.y)
-            {
-                countScoreState = false;
-                gameControl.GetComponent<GameControl>().addScore();
-            }   
-        }
+        //// when jumping, and Goomba is near Mario and we havent registered our score
+        //if (!onGroundState && countScoreState)
+        //{
+        //    if (Mathf.Abs(transform.position.x - enemyLocation.position.x) < 0.1f && transform.position.y > enemyLocation.position.y)
+        //    {
+        //        countScoreState = false;
+        //        gameControl.GetComponent<GameControl>().addScore();
+        //    }   
+        //}
 
     }
     void OnCollisionEnter2D(Collision2D col)

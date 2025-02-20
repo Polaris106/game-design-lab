@@ -133,6 +133,12 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   enemies: {fileID: 0}
   jumpOverGoomba: {fileID: 2353637049423382599}
+  deathImpulse: 15
+  gameCamera: {fileID: 0}
+  marioAudio: {fileID: 0}
+  marioDeath: {fileID: 0}
+  teleportingAudio: {fileID: 0}
+  marioAnimator: {fileID: 0}
 --- !u!61 &8794607804631530435
 BoxCollider2D:
   m_ObjectHideFlags: 0

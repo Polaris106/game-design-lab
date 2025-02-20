@@ -5,6 +5,10 @@ using UnityEngine;
 public class GoombaMovement : MonoBehaviour
 {
     public Vector3 startPosition;
+    public bool goombaIsAlive = true;
+    public Animator goombaAnimator;
+    public AudioSource goombaAudio;
+    public AudioClip goombaDeathAudio;
 
     private float originalX;
     private float maxOffset = 5.0f;
@@ -13,6 +17,7 @@ public class GoombaMovement : MonoBehaviour
     private Vector2 velocity;
     private Rigidbody2D enemyBody;
     private bool collidedWithPipe = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,18 +43,26 @@ public class GoombaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Mathf.Abs(enemyBody.position.x - originalX) < maxOffset) && !collidedWithPipe)
-        {// move goomba
-            Movegoomba();
+        if (goombaIsAlive)
+        {
+            if ((Mathf.Abs(enemyBody.position.x - originalX) < maxOffset) && !collidedWithPipe)
+            {// move goomba
+                Movegoomba();
+            }
+            else
+            {
+                // change direction
+                moveRight *= -1;
+                ComputeVelocity();
+                Movegoomba();
+                collidedWithPipe = false;
+            }
         }
         else
         {
-            // change direction
-            moveRight *= -1;
-            ComputeVelocity();
-            Movegoomba();
-            collidedWithPipe = false;
+            goombaAnimator.Play("Goomba-die");
         }
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -60,4 +73,24 @@ public class GoombaMovement : MonoBehaviour
             collidedWithPipe = true;
         }
     }
+
+    public void playDeathAudio()
+    {
+        goombaAudio.PlayOneShot(goombaDeathAudio);
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
+
+    public void GameRestart()
+    {
+        transform.localPosition = startPosition;
+        originalX = transform.position.x;
+        moveRight = -1;
+        ComputeVelocity();
+    }
+
 }

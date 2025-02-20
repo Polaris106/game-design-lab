@@ -13,6 +13,7 @@ public class GameControl : Singleton<GameControl>
     public GameObject gameOverMenuPanel;
     public GameObject restartButton;
     public GameObject scoreTextObject;
+    public GameObject canvas;
     
     public TextMeshProUGUI scoreTextGUI;
     public string prevScene;
@@ -20,16 +21,20 @@ public class GameControl : Singleton<GameControl>
     public bool canFly = false;
 
     public AudioSource gameAudio;
+    public AudioClip touhouProjectTheme;
+    public AudioClip marioTheme;
 
     [System.NonSerialized]
     public bool gameOver = false;
     public bool gameStart = false;
     public bool alrCalled = false;
     public bool enteringScene = true;
+    public bool musicPlayed = false;
 
     public int score = 0;   // variables under System.NonSerialized will not appear in inspector
 
     private GameObject mario;
+ 
 
     override public void Awake()
     {
@@ -62,13 +67,35 @@ public class GameControl : Singleton<GameControl>
             switch (prevScene)
             {
                 case "FlappyBird":
-                    mario.transform.position = new Vector3(6.3f, -0.5f, 0.0f);
+                    mario.transform.position = new Vector3(7.72f, -0.44f, 0.0f);
+                    break;
+                case "TouhouProject":
+                    mario.transform.position = new Vector3(35.47f, 7.1f, 0.0f);
                     break;
                 default:
-                    mario.transform.position = new Vector3(-1.5f, -2.5f, 0.0f);
+
                     break;
             }
             enteringScene = false;
+        }
+        if (currentScene == "TouhouProject" && !musicPlayed)
+        {
+            musicPlayed = true;
+            gameAudio.Stop();
+            gameAudio.PlayOneShot(touhouProjectTheme);
+        }
+        else if (currentScene == "MarioScene")
+        {
+            canvas.SetActive(true);
+            if (!musicPlayed)
+            {
+                musicPlayed = true;
+                gameAudio.Stop();
+                gameAudio.PlayOneShot(marioTheme);
+                canvas.SetActive(true);
+            }
+   
+
         }
 
         if (gameStart)
@@ -92,6 +119,7 @@ public class GameControl : Singleton<GameControl>
             {
                 Time.timeScale = 1.0f;
                 //gameOverMenuPanel.SetActive(false);
+
                 restartButton.SetActive(true);
                 scoreTextObject.SetActive(true);
                 scoreTextGUI.text = "Score: " + score.ToString();
@@ -105,5 +133,6 @@ public class GameControl : Singleton<GameControl>
     public void addScore()
     {
         score++;
+        Debug.Log("Score: " + score);
     }
 }

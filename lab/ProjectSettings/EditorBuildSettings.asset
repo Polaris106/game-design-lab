@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FlappyBirdScene.unity
     guid: 95432130d236d2441996d577a7083bbd
+  - enabled: 1
+    path: Assets/Scenes/TouhouProject.unity
+    guid: fb5386691b7f4604ca96d6816264f55f
   m_configObjects: {}

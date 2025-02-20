@@ -26,6 +26,7 @@ public class RestartButton : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerName = player.name;
         gameControl = GameObject.Find("GameControl");
+        gameControl.GetComponent<GameControl>().score = 0;
         // reset everything
         switch (playerName)
         {
@@ -34,6 +35,9 @@ public class RestartButton : MonoBehaviour
                 break;
             case "FlappyBird":
                 player.GetComponent<FlappyBirdMovement>().ResetGame();
+                break;
+            case "Reimu":
+                player.GetComponent<ReimuMovement>().ResetGame();
                 break;
         }
         

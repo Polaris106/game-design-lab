@@ -110,7 +110,8 @@ public class FlappyBirdMovement : MonoBehaviour
     public void ResetGame()
     {
         SceneManager.LoadScene(0);
-
+        gameControl.GetComponent<GameControl>().currentScene = "MarioScene";
+        gameControl.GetComponent<GameControl>().prevScene = null;
         // reset score
         gameControl.GetComponent<GameControl>().score = 0;
     }
