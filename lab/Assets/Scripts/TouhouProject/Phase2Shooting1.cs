@@ -2,13 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KanakoShooting3 : MonoBehaviour
+public class Phase2Shooting1 : MonoBehaviour
 {
-    
-    public GameObject proj_prefab;
-    public KanakoController kanakoControl;
-    public AudioSource kanakoAudio;
-    public AudioClip kanakoShootAudio;
+    public KanakoController kanakoController;
     public ProjectilePool projectilePoolScript;
 
     [SerializeField]
@@ -19,22 +15,32 @@ public class KanakoShooting3 : MonoBehaviour
     private float coolDown;
     private float shootDuration;
     private GameObject proj;
-    private int projectilesAmount = 20;
+    private int projectilesAmount = 3;
     private GameObject gameControl;
     private GameControl gameControlScript;
-
+    private float rotationSpeed = 60f;
 
     // Start is called before the first frame update
     void Start()
     {
-        coolDown = 1f;
+        coolDown = 0.05f;
         shootDuration = 0f;
         gameControl = GameObject.Find("GameControl");
         gameControlScript = gameControl.GetComponent<GameControl>();
     }
 
+    // Update is called once per frame
     void Update()
     {
+        if (kanakoController.currentHealth <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+
+        // Rotate the GameObject around the Z-axis (for 2D)
+        Vector3 worldRotation = new Vector3(0, 0, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + worldRotation);
+
         shootDuration -= Time.deltaTime;
         if (shootDuration <= 0)
         {
@@ -43,38 +49,35 @@ public class KanakoShooting3 : MonoBehaviour
             oneTime = false;
             if (coolDown <= 0)
             {
-                shootDuration = 0.1f;
+                shootDuration = 0.05f;
             }
         }
-        else if (shootDuration > 0 && oneTime == false && gameControlScript.gameStart && kanakoControl.currentHealth >= 200 && !kanakoControl.secondPhase)
+        else if (shootDuration > 0 && oneTime == false)
         {
-            kanakoAudio.PlayOneShot(kanakoShootAudio);
+            //kanakoAudio.PlayOneShot(kanakoShootAudio);
             Shoot();
             oneTime = true;
-            //oneTime = true;
-            coolDown = 1f;
+            coolDown = 0.05f;
         }
     }
 
     private void Shoot()
     {
-        if (gameControlScript.gameOver == false)
+        float angleStep = (endAngle - startAngle) / projectilesAmount;
+        float angle = startAngle;
+        for (int i = 0; i < projectilesAmount + 1; i++)
         {
-            float angleStep = (endAngle - startAngle) / projectilesAmount;
-            float angle = startAngle;
-            for (int i = 0; i < projectilesAmount + 1; i++)
-            {
-                float projDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
-                float projDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
+            float projDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
+            float projDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
 
-                Vector3 projMoveVector = new Vector3(projDirX, projDirY, 0f);
-                Vector2 projDir = (projMoveVector - transform.position).normalized;
+            Vector3 projMoveVector = new Vector3(projDirX, projDirY, 0f);
+            Vector2 projDir = (projMoveVector - transform.position).normalized;
 
-                SetProjectiles(projDir);
+            SetProjectiles(projDir);
 
-                angle += angleStep;
-            }
+            angle += angleStep;
         }
+
     }
 
     void SetProjectiles(Vector2 projDir)
@@ -85,7 +88,7 @@ public class KanakoShooting3 : MonoBehaviour
         proj.transform.position = transform.position;
         proj.transform.rotation = transform.rotation;
         // Set the projectile's movement direction
-        proj.GetComponent<Projectile4Controller>().SetMoveDirection(projDir);
+        proj.GetComponent<Projectile3Controller>().SetMoveDirection(projDir);
     }
 
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReimuProjController : MonoBehaviour
+public class PlayerProjController : MonoBehaviour
 {
     private double lifespan = 1f;
 

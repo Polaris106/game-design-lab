@@ -7,11 +7,11 @@ public class KanakoHealthBar : MonoBehaviour
 {
     public Slider hp_slider;
     public Slider delayed_hp_slider;
-    public float maxHealth = 200f;
+    public KanakoController kanakoController;
     public float currentHealth;
 
     private float lerp_speed = 0.05f;
-
+    private float maxHealth = 400f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,10 +32,6 @@ public class KanakoHealthBar : MonoBehaviour
             {
                 delayed_hp_slider.value = Mathf.Lerp(delayed_hp_slider.value, currentHealth, lerp_speed);
             }
-        }
-        if (currentHealth <= 0)
-        {
-
         }
 
     }

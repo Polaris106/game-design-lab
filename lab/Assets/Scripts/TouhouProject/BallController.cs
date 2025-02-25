@@ -31,6 +31,7 @@ public class BallController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, destination.position, step);
             if (transform.position == destination.position)
             {
+                kanakoController.isInvincible = false;
                 beam1.SetActive(true);
                 beam2.SetActive(true);
             }

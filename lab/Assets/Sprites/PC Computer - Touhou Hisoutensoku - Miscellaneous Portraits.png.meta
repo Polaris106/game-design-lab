@@ -152,7 +152,7 @@ TextureImporter:
         width: 132
         height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,6 +160,27 @@ TextureImporter:
       bones: []
       spriteID: cc3b7d30c96354f4b86650bfc49c983d
       internalID: -604735229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Portrait
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4505
+        width: 533
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fed54aadb1a2624891636cb11e5e0c4
+      internalID: 282680489
       vertices: []
       indices: 
       edges: []
@@ -175,6 +196,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Marisa-Portrait: 282680489
       Reimu-Portrait: 1072027161
       Reimu-portrait: -604735229
   mipmapLimitGroupName: 

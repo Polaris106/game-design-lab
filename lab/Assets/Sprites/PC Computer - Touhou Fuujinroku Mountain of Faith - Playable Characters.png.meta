@@ -674,10 +674,10 @@ TextureImporter:
         serializedVersion: 2
         x: 283
         y: 305
-        width: 26
+        width: 27
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -685,6 +685,615 @@ TextureImporter:
       bones: []
       spriteID: fa50234ea91f28e478b2ab3e1833f73b
       internalID: 151821499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Idle2
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 305
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ff7f26e7048184bad2866f65e93f87
+      internalID: 291808039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Idle3
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 305
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc458c67deff32448215d5f35ebc4b8
+      internalID: -1449800087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Idle4
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 305
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b2e782e90d7f5499d8333bfe9bce87
+      internalID: 1741043981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Idle5
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 305
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44d237341477494f9d31d04736dd9af
+      internalID: -1901077321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Idle6
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 305
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217d866cdebf4ae42a66384788eb26db
+      internalID: 1342521901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Idle7
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 305
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b232ff1c8dce34e89c05cdd1d6ad3f
+      internalID: 1765464214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Idle8
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 305
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9009e8499921cd4aae2fe96e8df6016
+      internalID: -263910933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Left1
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 257
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528f45fcef433da4bb9d9c080ae317a7
+      internalID: -1153660248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Left2
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 257
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f550b394d39080e4db0bc02949276f15
+      internalID: -2145023173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Left3
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 257
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d0f7a1ce36f42546b20fe9c9eb0567c
+      internalID: -1302861391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Left4
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 257
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbca5390310736a4fa6ad5943b6c527b
+      internalID: 731125439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Left5
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 257
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342e567cf2f25fd40afa5036805de0a7
+      internalID: -726749984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Left6
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 257
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb328312801cb324cb5d730e455278dd
+      internalID: -6404292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Left7
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 257
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8fd9a1550840a741b9e6ab582ec4e50
+      internalID: 453717019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Left8
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 257
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26fb9c09dad525240b3f8fb0fc7f4323
+      internalID: 16978128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Right1
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 209
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ea6aa081518fb4bbf18b50a9725fc9
+      internalID: 1907776656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Right2
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 209
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4702279765f27c3419e920c48903a3e9
+      internalID: -1143019833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Right3
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 209
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899bceda460c51444b404cb4a2493855
+      internalID: -1799648110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Right4
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 209
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba35c3112814ba479d57f370b1915f3
+      internalID: 643314866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Right5
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 209
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d326b2bd711accf47bbfd55fd3ab4e25
+      internalID: -1243365328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Right6
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 209
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d3c7639e6ce724fa44afab996049ee
+      internalID: 16632902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Right7
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 209
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cdd4ca111311ee4abf5f72b925d0332
+      internalID: -284140341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-Right8
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 209
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2d144ec22a11744be66fe01ee11e12
+      internalID: 255124029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarisaProjectile
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 169
+        width: 56
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a474aa618fe4df42a7e5193451a8e32
+      internalID: 559492973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu-ShootingPoint
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 192
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed1e91c0d25d5c844939215c08e3124e
+      internalID: -1894723009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarisaProjectil
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 193
+        width: 31
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326d1e6ddf195ef45aadc7496354bcc2
+      internalID: -2034955939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-ShootingPoint
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 193
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77cb2658dde9cb34683cf292f09794b9
+      internalID: -570168329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarisaProjectile3
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 97
+        width: 30
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b730b228ff06b41bbbb5635dadae3b
+      internalID: -1906087290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa-ShootingPoint2
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 193
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37cf05ebee808d4428d40a201f33ced6
+      internalID: -114225334
       vertices: []
       indices: 
       edges: []
@@ -701,6 +1310,34 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Marisa-Idle1: 151821499
+      Marisa-Idle2: 291808039
+      Marisa-Idle3: -1449800087
+      Marisa-Idle4: 1741043981
+      Marisa-Idle5: -1901077321
+      Marisa-Idle6: 1342521901
+      Marisa-Idle7: 1765464214
+      Marisa-Idle8: -263910933
+      Marisa-Left1: -1153660248
+      Marisa-Left2: -2145023173
+      Marisa-Left3: -1302861391
+      Marisa-Left4: 731125439
+      Marisa-Left5: -726749984
+      Marisa-Left6: -6404292
+      Marisa-Left7: 453717019
+      Marisa-Left8: 16978128
+      Marisa-Right1: 1907776656
+      Marisa-Right2: -1143019833
+      Marisa-Right3: -1799648110
+      Marisa-Right4: 643314866
+      Marisa-Right5: -1243365328
+      Marisa-Right6: 16632902
+      Marisa-Right7: -284140341
+      Marisa-Right8: 255124029
+      Marisa-ShootingPoint: -570168329
+      Marisa-ShootingPoint2: -114225334
+      MarisaProjectil: -2034955939
+      MarisaProjectile: 559492973
+      MarisaProjectile3: -1906087290
       Reimu-Idle1: -414063529
       Reimu-Idle2: 1699916619
       Reimu-Idle3: 1368641827
@@ -726,6 +1363,7 @@ TextureImporter:
       Reimu-Right6: -1077544908
       Reimu-Right7: 2109721587
       Reimu-Right8: -1282076356
+      Reimu-ShootingPoint: -1894723009
       Touhou-Coin: 1892398631
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

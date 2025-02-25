@@ -28,9 +28,9 @@ public class Projectile4Controller : MonoBehaviour
         kanakoController = GameObject.Find("Kanako").GetComponent<KanakoController>();
         timeToChangeMotion = 1.5f;
         speed = 1f;
+        onlyOnce = true;
         moveSpeed = 2f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        onlyOnce = true;
         gameControl = GameObject.Find("GameControl");
         gameControlScript = gameControl.GetComponent<GameControl>();
     }
@@ -72,24 +72,53 @@ public class Projectile4Controller : MonoBehaviour
         moveDirection = dir;
     }
 
-    private void Destroy()
-    {
-        Destroy(gameObject);
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            ReimuMovement rm = other.GetComponent<ReimuMovement>();
+            TouhouPlayerMovement rm = other.GetComponent<TouhouPlayerMovement>();
             if (rm != null)
             {
                 rm.TakeDamage(damage);
             }
-            Destroy();
+            turnInvisible();
 
         }
     }
+    private void OnEnable()
+    {
+        Invoke("Destroy", 10f);
+    }
 
+    private void Destroy()
+    {
+
+        undoInvisible();
+        motionChanged = false;
+        onlyOnce = true;
+        timeToChangeMotion = 1.5f;
+        moveSpeed = 2f;
+        direction = Vector2.zero;
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
+
+
+    void turnInvisible()
+    {
+
+        GetComponent<SpriteRenderer>().enabled = false;
+        this.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    void undoInvisible()
+    {
+        GetComponent<SpriteRenderer>().enabled = true;
+        this.GetComponent<BoxCollider2D>().enabled = true;
+    }
 
 }

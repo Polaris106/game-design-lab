@@ -22,13 +22,29 @@ public class Projectile1Controller : MonoBehaviour
     void Update()
     {
         lifespan -= Time.deltaTime;
-        if (lifespan <= 0 || kanakoController.currentHealth <= 0)
+        if (kanakoController.currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Destroy();
 
         }
         transform.Translate(moveDirection * move_speed * Time.deltaTime);
 
+    }
+
+    private void OnEnable()
+    {
+        Invoke("Destroy", 5f);
+    }
+
+    private void Destroy()
+    {
+        undoInvisible();
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
     }
 
     public void SetMoveDirection(Vector2 dir)
@@ -36,22 +52,29 @@ public class Projectile1Controller : MonoBehaviour
         moveDirection = dir;
     }
 
-    private void Destroy()
-    {
-        Destroy(gameObject);
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            ReimuMovement rm = other.GetComponent<ReimuMovement>();
+            TouhouPlayerMovement rm = other.GetComponent<TouhouPlayerMovement>();
             if (rm != null)
             {
                 rm.TakeDamage(damage);
             }
-            Destroy();
+            turnInvisible();
 
         }
+    }
+
+    void turnInvisible()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+        this.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    void undoInvisible()
+    {
+        GetComponent<SpriteRenderer>().enabled = true;
+        this.GetComponent<BoxCollider2D>().enabled = true;
     }
 }

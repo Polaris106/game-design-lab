@@ -374,6 +374,153 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Sanae-Idle1
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1327
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0943623d66401649aface65da56cf17
+      internalID: 1783821843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sanae-Idle2
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1327
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adaba75ce15155b49adf094d2b130a00
+      internalID: -151007869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sanae-Idle3
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 1327
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b28e8c5ad8ca542bc4c21330763c38
+      internalID: -203122394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sanae-Idle4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1327
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce84ca779eb4a04cbbec6cee0bca793
+      internalID: -934598382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sanae-Skill1
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1184
+        width: 35
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa2e75fc49e1134e81b5c24e40a0ffb
+      internalID: -1816111134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sanae-Skill2
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 1184
+        width: 35
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f531eabf0c3ad54ab520496693c591e
+      internalID: -919478965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sanae-Skill3
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 1184
+        width: 35
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd96a9f125da2b479466b32c0521191
+      internalID: 1425025581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -397,6 +544,13 @@ TextureImporter:
       Kanako-ultimate2: 706719233
       Kanako-ultimate3: -1231783561
       Kanako-ultimate4: 39329918
+      Sanae-Idle1: 1783821843
+      Sanae-Idle2: -151007869
+      Sanae-Idle3: -203122394
+      Sanae-Idle4: -934598382
+      Sanae-Skill1: -1816111134
+      Sanae-Skill2: -919478965
+      Sanae-Skill3: 1425025581
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

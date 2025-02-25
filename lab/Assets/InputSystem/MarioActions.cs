@@ -256,6 +256,17 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""TouhouActions"",
+            ""bindingGroup"": ""TouhouActions"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -417,6 +428,15 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
         {
             if (m_MarioActionsSchemeIndex == -1) m_MarioActionsSchemeIndex = asset.FindControlSchemeIndex("MarioActions");
             return asset.controlSchemes[m_MarioActionsSchemeIndex];
+        }
+    }
+    private int m_TouhouActionsSchemeIndex = -1;
+    public InputControlScheme TouhouActionsScheme
+    {
+        get
+        {
+            if (m_TouhouActionsSchemeIndex == -1) m_TouhouActionsSchemeIndex = asset.FindControlSchemeIndex("TouhouActions");
+            return asset.controlSchemes[m_TouhouActionsSchemeIndex];
         }
     }
     public interface IGameplayActions

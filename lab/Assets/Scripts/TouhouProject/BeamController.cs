@@ -62,7 +62,7 @@ public class BeamController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            ReimuMovement rm = other.GetComponent<ReimuMovement>();
+            TouhouPlayerMovement rm = other.GetComponent<TouhouPlayerMovement>();
             if (rm != null)
             {
                 rm.TakeDamage(damage);

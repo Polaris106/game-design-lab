@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro.Examples;
 using UnityEngine;
 
-public class ReimuShooting : MonoBehaviour
+public class TouhouPlayerShooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject projPrefab;
