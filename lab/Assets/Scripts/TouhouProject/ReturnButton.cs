@@ -27,6 +27,7 @@ public class ReturnButton : MonoBehaviour
         gameControlScript.prevScene = "TouhouProject";
         gameControlScript.enteringScene = true;
         gameControlScript.musicPlayed = false;
+        gameControlScript.canShoot = true;
         SceneManager.LoadScene(0);
     }
 }

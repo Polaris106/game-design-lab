@@ -9,6 +9,7 @@ public class KanakoShooting3 : MonoBehaviour
     public KanakoController kanakoControl;
     public AudioSource kanakoAudio;
     public AudioClip kanakoShootAudio;
+    public ProjectilePool projectilePoolScript;
 
     [SerializeField]
     private float startAngle = 0f, endAngle = 360f;
@@ -45,10 +46,10 @@ public class KanakoShooting3 : MonoBehaviour
                 shootDuration = 0.1f;
             }
         }
-        else if (shootDuration > 0 && oneTime == false && gameControlScript.gameStart && kanakoControl.currentHealth >= 200)
+        else if (shootDuration > 0 && oneTime == false && gameControlScript.gameStart && kanakoControl.currentHealth >= 200 && !kanakoControl.secondPhase)
         {
             kanakoAudio.PlayOneShot(kanakoShootAudio);
-            StartShoot();
+            Shoot();
             oneTime = true;
             //oneTime = true;
             coolDown = 1f;
@@ -79,7 +80,7 @@ public class KanakoShooting3 : MonoBehaviour
     void SetProjectiles(Vector2 projDir)
     {
         // Get projectile instance
-        proj = Instantiate(proj_prefab);
+        proj = this.gameObject.GetComponent<ProjectilePool>().GetProjectile();
         // Set the projectile's position to the current object's position
         proj.transform.position = transform.position;
         proj.transform.rotation = transform.rotation;
@@ -87,10 +88,6 @@ public class KanakoShooting3 : MonoBehaviour
         proj.GetComponent<Projectile4Controller>().SetMoveDirection(projDir);
     }
 
-    void StartShoot()
-    {
-        Shoot();
-    }
 
     void StopShoot()
     {

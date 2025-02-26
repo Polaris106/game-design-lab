@@ -4,50 +4,44 @@ using UnityEngine;
 
 public class ProjectilePool : MonoBehaviour
 {
-    public GameObject pooledProjectile;
 
     [SerializeField]
-    private bool notEnoughProjectileInPool = true;
+    private GameObject pooledProj;
+    [SerializeField]
+    private int initialPoolSize = 20; // Optionally prefill the pool with a certain number of projectiles
 
     private List<GameObject> projectiles;
-
-    void Awake()
-    {
-    }
 
     // Start is called before the first frame update
     void Start()
     {
         projectiles = new List<GameObject>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+        // Optionally prefill the pool
+        for (int i = 0; i < initialPoolSize; i++)
+        {
+            GameObject proj = Instantiate(pooledProj);
+            proj.SetActive(false); // Start with inactive objects
+            projectiles.Add(proj);
+        }
     }
 
     public GameObject GetProjectile()
     {
-        if (projectiles.Count > 0)
+        // Look for an inactive projectile in the pool
+        foreach (GameObject proj in projectiles)
         {
-            for (int i = 0; i < projectiles.Count; i++)
+            if (!proj.activeInHierarchy)
             {
-                if (!projectiles[i].activeInHierarchy)
-                {
-                    return projectiles[i];
-                }
+                proj.SetActive(true); // Activate the object before returning it
+                return proj;
             }
         }
 
-        if (notEnoughProjectileInPool)
-        {
-            GameObject proj = Instantiate(pooledProjectile);
-            proj.SetActive(false);
-            projectiles.Add(proj);
-            return proj;
-        }
-
-        return null;
+        // If no inactive projectile is found, create a new one
+        GameObject newProj = Instantiate(pooledProj);
+        newProj.SetActive(true);
+        projectiles.Add(newProj);
+        return newProj;
     }
 }

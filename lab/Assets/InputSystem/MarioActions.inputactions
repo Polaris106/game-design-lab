@@ -234,6 +234,17 @@
                     "isOR": false
                 }
             ]
+        },
+        {
+            "name": "TouhouActions",
+            "bindingGroup": "TouhouActions",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
         }
     ]
 }

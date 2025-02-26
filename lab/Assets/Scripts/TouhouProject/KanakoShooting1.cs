@@ -8,6 +8,7 @@ public class KanakoShooting1 : MonoBehaviour
     public KanakoController kanakoControl;
     public AudioSource shootAudio;
     public AudioClip shootSound;
+    public ProjectilePool projectilePoolScript;
 
     private int projectilesAmount;
 
@@ -48,7 +49,7 @@ public class KanakoShooting1 : MonoBehaviour
             coolDown = 0.8f;
         }
 
-        if (kanakoControl.currentHealth < 200)
+        if (kanakoControl.currentHealth < 200 || kanakoControl.secondPhase)
         {
             Debug.Log("Stop Shooting");
             StopShoot();
@@ -88,7 +89,7 @@ public class KanakoShooting1 : MonoBehaviour
     void SetProjectiles(Vector2 projDir)
     {
         // Get projectile instance
-        projectile1 = Instantiate(projectile1_prefab);
+        projectile1 = this.gameObject.GetComponent<ProjectilePool>().GetProjectile();
         // Set the projectile's position to the current object's position
         projectile1.transform.position = transform.position;
         projectile1.transform.rotation = transform.rotation;

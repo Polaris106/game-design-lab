@@ -36,8 +36,8 @@ public class RestartButton : MonoBehaviour
             case "FlappyBird":
                 player.GetComponent<FlappyBirdMovement>().ResetGame();
                 break;
-            case "Reimu":
-                player.GetComponent<ReimuMovement>().ResetGame();
+            case "TouhouPlayer":
+                player.GetComponent<TouhouPlayerMovement>().ResetGame();
                 break;
         }
         

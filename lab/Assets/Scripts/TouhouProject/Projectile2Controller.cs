@@ -22,10 +22,9 @@ public class Projectile2Controller : MonoBehaviour
     void Update()
     {
         lifespan -= Time.deltaTime;
-        if (lifespan <= 0 || kanakoController.currentHealth <= 200)
+        if (kanakoController.currentHealth <= 200)
         {
-            Destroy(gameObject);
-
+            Destroy();
         }
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
 
@@ -36,22 +35,46 @@ public class Projectile2Controller : MonoBehaviour
         moveDirection = dir;
     }
 
-    private void Destroy()
-    {
-        Destroy(gameObject);
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            ReimuMovement rm = other.GetComponent<ReimuMovement>();
+            TouhouPlayerMovement rm = other.GetComponent<TouhouPlayerMovement>();
             if (rm != null)
             {
                 rm.TakeDamage(damage);
             }
-            Destroy();
+            turnInvisible();
 
         }
+    }
+
+    private void OnEnable()
+    {
+        Invoke("Destroy", 5f);
+    }
+
+    private void Destroy()
+    {
+        undoInvisible();
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
+
+
+    void turnInvisible()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+        this.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    void undoInvisible()
+    {
+        GetComponent<SpriteRenderer>().enabled = true;
+        this.GetComponent<BoxCollider2D>().enabled = true;
     }
 }

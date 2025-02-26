@@ -17,6 +17,7 @@ public class GoombaMovement : MonoBehaviour
     private Vector2 velocity;
     private Rigidbody2D enemyBody;
     private bool collidedWithPipe = false;
+    private float health = 30f;
 
 
     // Start is called before the first frame update
@@ -45,6 +46,11 @@ public class GoombaMovement : MonoBehaviour
     {
         if (goombaIsAlive)
         {
+            if (health <= 0)
+            {
+                goombaIsAlive = false;
+            }
+
             if ((Mathf.Abs(enemyBody.position.x - originalX) < maxOffset) && !collidedWithPipe)
             {// move goomba
                 Movegoomba();
@@ -57,6 +63,7 @@ public class GoombaMovement : MonoBehaviour
                 Movegoomba();
                 collidedWithPipe = false;
             }
+
         }
         else
         {
@@ -71,6 +78,10 @@ public class GoombaMovement : MonoBehaviour
         {
             Debug.Log("collided with pipe");
             collidedWithPipe = true;
+        }
+        if (other.gameObject.CompareTag("Projectile"))
+        {
+            health -= 1;
         }
     }
 

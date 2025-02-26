@@ -8,6 +8,7 @@ public class BallController : MonoBehaviour
     public Transform destination;
     public GameObject beam1;
     public GameObject beam2;
+    public bool destinationReached = false;
 
     // Rotation speed in degrees per second
     private float rotationSpeed = 30f;
@@ -31,6 +32,7 @@ public class BallController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, destination.position, step);
             if (transform.position == destination.position)
             {
+                destinationReached = true;
                 beam1.SetActive(true);
                 beam2.SetActive(true);
             }

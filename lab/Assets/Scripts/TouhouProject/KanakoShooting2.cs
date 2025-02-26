@@ -9,6 +9,7 @@ public class KanakoShooting2 : MonoBehaviour
     public Animator kanakoAnimator;
     public AudioSource ballAudio;
     public AudioClip ballShootAudio;
+    public ProjectilePool projectilePoolScript;
 
     private float angle = 90f;
     private bool swingLeft;
@@ -71,7 +72,7 @@ public class KanakoShooting2 : MonoBehaviour
     void SetProjectiles(Vector2 projDir)
     {
         // Get projectile instance
-        proj = Instantiate(proj_prefab);
+        proj = this.gameObject.GetComponent<ProjectilePool>().GetProjectile();
         // Set the projectile's position to the current object's position
         proj.transform.position = transform.position;
         proj.transform.rotation = transform.rotation;

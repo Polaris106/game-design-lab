@@ -19,9 +19,11 @@ public class GameControl : Singleton<GameControl>
     public string prevScene;
     public string currentScene;
     public bool canFly = false;
+    public bool canShoot = false;
 
     public AudioSource gameAudio;
     public AudioClip touhouProjectTheme;
+    public AudioClip touhouProjectTheme2;
     public AudioClip marioTheme;
 
     [System.NonSerialized]
@@ -32,6 +34,7 @@ public class GameControl : Singleton<GameControl>
     public bool musicPlayed = false;
 
     public int score = 0;   // variables under System.NonSerialized will not appear in inspector
+    public int highScore = 0;
 
     private GameObject mario;
  
@@ -57,6 +60,10 @@ public class GameControl : Singleton<GameControl>
     // Update is called once per frame
     void Update()
     {
+        if (highScore < score)
+        {
+            highScore = score;
+        }
         if (mario == null)
         {
             mario = GameObject.Find("Mario");
@@ -128,6 +135,12 @@ public class GameControl : Singleton<GameControl>
 
 
 
+    }
+
+    public void PlayTouhouTheme2()
+    {
+        gameAudio.Stop();
+        gameAudio.PlayOneShot(touhouProjectTheme2);
     }
 
     public void addScore()

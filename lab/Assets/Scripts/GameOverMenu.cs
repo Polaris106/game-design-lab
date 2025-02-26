@@ -7,10 +7,12 @@ using TMPro.Examples;
 public class GameOverMenu : MonoBehaviour
 {
     public TextMeshProUGUI gameOverScoreText;
+    public TextMeshProUGUI gameOverHighScoreText;
     public GameObject gameControl;
     public GameObject gameOverMenuPanel;
 
     private float score;
+    private float highScore;
     private bool gameOver;
     private bool gameStart;
 
@@ -34,7 +36,10 @@ public class GameOverMenu : MonoBehaviour
             {
                 gameOverMenuPanel.SetActive(true);
                 score = gameControl.GetComponent<GameControl>().score;
+                highScore = gameControl.GetComponent<GameControl>().highScore;
+                gameOverHighScoreText.text = "HIGH SCORE: " + highScore.ToString();
                 gameOverScoreText.text = "SCORE: " + score.ToString();
+
             }
             else if (!gameOver)
             {
