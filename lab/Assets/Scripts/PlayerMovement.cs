@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 
-public class PlayerMovement : Singleton<PlayerMovement>
+public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10;
     public float maxSpeed = 20;
@@ -54,21 +54,6 @@ public class PlayerMovement : Singleton<PlayerMovement>
         gameControl = GameObject.Find("GameControl");
         // update animator state
         marioAnimator.SetBool("onGround", onGroundState);
-        // subscribe to scene manager scene change
-        SceneManager.activeSceneChanged += SetStartingPosition;
-    }
-    public void SetStartingPosition(Scene current, Scene next)
-    {
-        if (next.name == "Mario2")
-        {
-            // change the position accordingly in your World-1-2 case
-            this.transform.position = new Vector3(23f, -2.45f, 0.0f);
-        }
-        else if (next.name == "MarioScene")
-        {
-            // change the position accordingly in your World-1-1 case
-            this.transform.position = new Vector3(-1.5f, -2.5f, 0.0f);
-        }
     }
 
 
