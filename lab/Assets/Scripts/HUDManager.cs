@@ -21,7 +21,7 @@ public class HUDManager : Singleton<HUDManager>
     {
         currentScene = gameControl.GetComponent<GameControl>().currentScene;
         canFly = gameControl.GetComponent<GameControl>().canFly;
-        if (currentScene == "MarioScene")
+        if (currentScene == "MarioScene" || currentScene == "Mario2")
         {
             
             skillsPanel.SetActive(true);

@@ -31,6 +31,7 @@ public class CameraController : MonoBehaviour
         endX = endLimitX.transform.position.x - viewportHalfWidthX;
         endY = endLimitY.transform.position.y;
         this.transform.position = new Vector3(player.position.x + offsetX, this.transform.position.y, -10);
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()

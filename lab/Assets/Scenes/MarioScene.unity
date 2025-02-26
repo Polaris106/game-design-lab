@@ -6777,6 +6777,10 @@ PrefabInstance:
       propertyPath: enemyLocation
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2885894068446378185, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4505042879396519118, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
       propertyPath: m_Name
       value: Mario
@@ -6825,6 +6829,10 @@ PrefabInstance:
       propertyPath: marioAnimator
       value: 
       objectReference: {fileID: 7236265257272587208}
+    - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: onGroundState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
       propertyPath: teleportingAudio
       value: 

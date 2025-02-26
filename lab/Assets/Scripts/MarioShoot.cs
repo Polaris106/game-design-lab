@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro.Examples;
 using UnityEngine;
 
-public class MarioShoot : MonoBehaviour
+public class MarioShoot : Singleton<MarioShoot>
 {
     public Transform firePoint;
     public GameObject projPrefab;
