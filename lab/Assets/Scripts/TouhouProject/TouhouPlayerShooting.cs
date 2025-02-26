@@ -9,6 +9,8 @@ public class TouhouPlayerShooting : MonoBehaviour
     public GameObject projPrefab;
     public float projForce = 20f;
 
+    private GameObject kanako;
+    private KanakoController kanakoController;
     private float fireRate = 0.1f;
     private float canFire;
     private GameObject gameControl;
@@ -19,6 +21,8 @@ public class TouhouPlayerShooting : MonoBehaviour
     {
         gameControl = GameObject.Find("GameControl");
         gameControlScript = gameControl.GetComponent<GameControl>();
+        kanako = GameObject.Find("Kanako");
+        kanakoController = kanako.GetComponent<KanakoController>();
     }
 
     // Update is called once per frame
@@ -27,12 +31,16 @@ public class TouhouPlayerShooting : MonoBehaviour
         canFire += Time.deltaTime;
         if (EnemyIsAlive() && gameControlScript.gameStart)
         {
-            if (canFire > fireRate)
+            if (kanakoController.currentHealth > 0)
             {
-                Shoot();
-                canFire = 0;
+                if (canFire > fireRate)
+                {
+                    Shoot();
+                    canFire = 0;
 
+                }
             }
+
         }
     }
 

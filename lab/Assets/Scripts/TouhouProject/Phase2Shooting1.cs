@@ -18,7 +18,7 @@ public class Phase2Shooting1 : MonoBehaviour
     private int projectilesAmount = 3;
     private GameObject gameControl;
     private GameControl gameControlScript;
-    private float rotationSpeed = 60f;
+    private float rotationSpeed = 90f;
 
     // Start is called before the first frame update
     void Start()
