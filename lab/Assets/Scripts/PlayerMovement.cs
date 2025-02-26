@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float deathImpulse = 15;
     public Transform gameCamera;
+    public GameObject firePoint1;
+    public GameObject firePoint2;
+    public GameObject firePoint3;
 
     // for audio
     public AudioSource marioAudio;
@@ -54,6 +57,12 @@ public class PlayerMovement : MonoBehaviour
         gameControl = GameObject.Find("GameControl");
         // update animator state
         marioAnimator.SetBool("onGround", onGroundState);
+        if (gameControl.GetComponent<GameControl>().canShoot)
+        {
+            firePoint1.SetActive(true);
+            firePoint2.SetActive(true);
+            firePoint3.SetActive(true);
+        }
     }
 
 
@@ -61,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         marioAnimator.SetFloat("xSpeed", Mathf.Abs(marioBody.velocity.x));
+
     }
 
     void FlipMarioSprite(int value)

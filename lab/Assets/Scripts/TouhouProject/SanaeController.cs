@@ -7,6 +7,7 @@ public class SanaeController : MonoBehaviour
     public Transform sanaePosition;
     public KanakoController kanakoController;
     public KanakoHealthBar healthBar;
+    public GameObject autoBall2;
     public bool inPosition = false;
 
     private float moveSpeed = 3f;

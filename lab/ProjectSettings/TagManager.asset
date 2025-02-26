@@ -22,9 +22,9 @@ TagManager:
   - Ground
   - Enemies
   - Obstacles
-  - 
-  - 
-  - 
+  - Projectiles
+  - Player
+  - Boundaries
   - 
   - 
   - 

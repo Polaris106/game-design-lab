@@ -7,7 +7,9 @@ public class KanakoController : MonoBehaviour
     
     public GameObject kanako;
     public float currentHealth;
-    public GameObject autoBall;
+    public GameObject autoBall1;
+    public GameObject autoBall2;
+
     public GameObject ShootingPoint1;
     public GameObject ShootingPoint2;
     public Animator kanakoAnimator;
@@ -19,15 +21,17 @@ public class KanakoController : MonoBehaviour
     private float maxHealth = 400;
     private GameObject gameControl;
     private GameControl gameControlScript;
-
+    private BallController ball1Controller;
+    private Ball2Controller ball2Controller;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-        
         gameControl = GameObject.Find("GameControl");
         gameControlScript = gameControl.GetComponent<GameControl>();
+        ball1Controller = autoBall1.GetComponent<BallController>();
+        ball2Controller = autoBall2.GetComponent<Ball2Controller>();
     }
 
     // Update is called once per frame
@@ -40,11 +44,21 @@ public class KanakoController : MonoBehaviour
         }
         if (!secondPhase)
         {
-            if (currentHealth < 200)
+            if (currentHealth < 200 )
             {
-                isInvincible = true;
+
                 ShootingPoint1.SetActive(true);
                 ShootingPoint2.SetActive(true);
+                if (!ball1Controller.destinationReached)
+                {
+                    isInvincible = true;
+                }
+                else
+                {
+                    isInvincible = false;
+  
+                }
+
             }
             if (currentHealth <= 0)
             {
@@ -54,6 +68,25 @@ public class KanakoController : MonoBehaviour
         }
         else
         {
+            if (currentHealth > 200 )
+            {
+                autoBall2.SetActive(true);
+            }
+            else
+            {
+                autoBall2.SetActive(false);
+            }
+            
+
+            if (!ball2Controller.destinationReached)
+            {
+                isInvincible = true;
+            }
+            else
+            {
+                isInvincible = false;
+
+            }
             if (currentHealth <= 0)
             {
                 Die();
@@ -64,7 +97,7 @@ public class KanakoController : MonoBehaviour
 
     public void SetAutoBallActive()
     {
-        autoBall.SetActive(true);
+        autoBall1.SetActive(true);
     }
 
     public void TakeDamage(int damage)

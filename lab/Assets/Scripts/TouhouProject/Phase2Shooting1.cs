@@ -6,6 +6,8 @@ public class Phase2Shooting1 : MonoBehaviour
 {
     public KanakoController kanakoController;
     public ProjectilePool projectilePoolScript;
+    public AudioSource shootAudio;
+    public AudioClip shootSound;
 
     [SerializeField]
     private float startAngle = 0f, endAngle = 360f;
@@ -15,10 +17,11 @@ public class Phase2Shooting1 : MonoBehaviour
     private float coolDown;
     private float shootDuration;
     private GameObject proj;
-    private int projectilesAmount = 3;
+    private int projectilesAmount = 10;
     private GameObject gameControl;
     private GameControl gameControlScript;
     private float rotationSpeed = 90f;
+    private Ball2Controller ball2Controller;
 
     // Start is called before the first frame update
     void Start()
@@ -41,24 +44,29 @@ public class Phase2Shooting1 : MonoBehaviour
         Vector3 worldRotation = new Vector3(0, 0, rotationSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + worldRotation);
 
-        shootDuration -= Time.deltaTime;
-        if (shootDuration <= 0)
+        if (kanakoController.currentHealth < 200)
         {
-            coolDown -= Time.deltaTime;
-            StopShoot();
-            oneTime = false;
-            if (coolDown <= 0)
+            shootDuration -= Time.deltaTime;
+            if (shootDuration <= 0)
             {
-                shootDuration = 0.05f;
+                coolDown -= Time.deltaTime;
+                StopShoot();
+                oneTime = false;
+                if (coolDown <= 0)
+                {
+                    shootDuration = 0.05f;
+                }
+            }
+            else if (shootDuration > 0 && oneTime == false)
+            {
+                shootAudio.PlayOneShot(shootSound);
+                Shoot();
+                oneTime = true;
+                coolDown = 0.5f;
             }
         }
-        else if (shootDuration > 0 && oneTime == false)
-        {
-            //kanakoAudio.PlayOneShot(kanakoShootAudio);
-            Shoot();
-            oneTime = true;
-            coolDown = 0.05f;
-        }
+
+
     }
 
     private void Shoot()
@@ -77,7 +85,7 @@ public class Phase2Shooting1 : MonoBehaviour
 
             angle += angleStep;
         }
-
+        
     }
 
     void SetProjectiles(Vector2 projDir)

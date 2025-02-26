@@ -7,13 +7,15 @@ public class BeamController : MonoBehaviour
     public AudioClip beamSetupAudioClip;
     public AudioClip beamDamageAudioClip;
     public AudioSource BeamAudio;
+    public bool canRotate = false;
+
 
 
     [SerializeField]
     private BoxCollider2D beamHitBox;
 
     private Vector2 moveDirection;
-    private int damage = 2;
+    private int damage = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +52,11 @@ public class BeamController : MonoBehaviour
     private void PlayBeamAudio()
     {
         BeamAudio.PlayOneShot(beamSetupAudioClip);
+    }
+
+    private void EnableBallRotation()
+    {
+        canRotate = true;
     }
 
     private void PlayContinuousBeamAudio()

@@ -16,10 +16,12 @@ public class TouhouHUDManager : MonoBehaviour
     public GameObject kanakoBackground;
     public KanakoController kanakoController;
     public SanaeController sanaeController;
+    public TextMeshProUGUI highScoreText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI speechText;
     public TextMeshProUGUI speakerName;
     public TextMeshProUGUI stageCompleteScoreText;
+    public TextMeshProUGUI stageCompleteHighScoreText;
     public int lineNumber = 0;
 
     private GameObject gameControl;
@@ -37,6 +39,7 @@ public class TouhouHUDManager : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score: " + gameControlScript.score.ToString();
+        highScoreText.text = "High Score: " + gameControlScript.highScore.ToString();
         if (gameControlScript.gameOver)
         {
             restartButton.SetActive(false);
@@ -53,6 +56,7 @@ public class TouhouHUDManager : MonoBehaviour
                 {
                     stageCompletePanel.SetActive(true);
                     stageCompleteScoreText.text = "Score: " + gameControlScript.score.ToString();
+                    stageCompleteHighScoreText.text = "High Score: " + gameControlScript.highScore.ToString();
                 }
             }
             else
@@ -76,6 +80,8 @@ public class TouhouHUDManager : MonoBehaviour
 
     public void StartPhaseTwo()
     {
+        
+        gameControlScript.PlayTouhouTheme2();
         kanakoController.secondPhase = true;
         kanakoHealthBar.SetActive(true);
         kanakoHealthBar.GetComponent<KanakoHealthBar>().currentHealth = kanakoController.secondPhaseHealth;
@@ -100,7 +106,7 @@ public class TouhouHUDManager : MonoBehaviour
                 kanakoPortrait.SetActive(false);
                 marisaPortrait.SetActive(true);
                 speakerName.text = "Marisa";
-                speechText.text = "Heh, you are not the first god we have exterminated, nor will you be the last. Let's go, Reimu!";
+                speechText.text = "Heh, you are not the first god we have exterminated, nor will you be our last. Let's go, Reimu!";
                 lineNumber++;
                 break;
             case 2:
@@ -112,20 +118,26 @@ public class TouhouHUDManager : MonoBehaviour
                 lineNumber++;
                 break;
             case 3:
+
                 kanakoPortrait.SetActive(false);
                 sanaePortrait.SetActive(true);
                 speakerName.text = "Sanae";
-                speechText.text = "Kanako-sama!! Damn you Hakurei miko, you will pay for this!";
+                speechText.text = "Kanako-sama! Are you alright?!";
                 lineNumber++;
                 break;
             case 4:
+                speakerName.text = "Sanae";
+                speechText.text = "Reimu Hakurei... you will pay for this!!";
+                lineNumber++;
+                break;
+            case 5:
                 sanaePortrait.SetActive(false);
                 kanakoPortrait.SetActive(true);
                 speakerName.text = "Kanako";
                 speechText.text = "Join me, Sanae. Together, they shall witness the full might of the Moriya Shrine";
                 lineNumber++;
                 break;
-            case 5:
+            case 6:
                 StartPhaseTwo();
                 break;
             default:

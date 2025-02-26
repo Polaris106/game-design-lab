@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MarioProjController : MonoBehaviour
 {
-    private double lifespan = 1f;
+    private double lifespan = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +25,9 @@ public class MarioProjController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Enemy" || col.gameObject.GetComponent<Collider2D>())
+        if (col.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
-
         }
     }
 }

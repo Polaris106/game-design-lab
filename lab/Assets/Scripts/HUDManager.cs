@@ -6,10 +6,12 @@ public class HUDManager : Singleton<HUDManager>
 {
     public GameObject skillsPanel;
     public GameObject flyIcon;
+    public GameObject shootIcon;
 
     public GameObject gameControl;
     private string currentScene;
     private bool canFly;
+    private bool canShoot;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class HUDManager : Singleton<HUDManager>
     {
         currentScene = gameControl.GetComponent<GameControl>().currentScene;
         canFly = gameControl.GetComponent<GameControl>().canFly;
+        canShoot = gameControl.GetComponent<GameControl>().canShoot;
         if (currentScene == "MarioScene" || currentScene == "Mario2")
         {
             
@@ -32,6 +35,14 @@ public class HUDManager : Singleton<HUDManager>
             else
             {
                 flyIcon.SetActive(false);
+            }
+            if (canShoot)
+            {
+                shootIcon.SetActive(true);
+            }
+            else
+            {
+                shootIcon.SetActive(false);
             }
         }
         else if (currentScene == "TouhouProject")

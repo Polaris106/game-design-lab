@@ -530,7 +530,7 @@ TextureImporter:
         width: 17
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -538,6 +538,27 @@ TextureImporter:
       bones: []
       spriteID: 57187ac5ceac5674e90935d25774daa7
       internalID: -1444318642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: proj11
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 384
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21369dd294efff4bb01fdcac93a71f1
+      internalID: -963171179
       vertices: []
       indices: 
       edges: []
@@ -559,6 +580,7 @@ TextureImporter:
       phase2proj2: -1444318642
       proj1: 235961730
       proj10: 1666524805
+      proj11: -963171179
       proj2-: 1171881349
       proj2-2: -172465696
       proj3-1: 633213476

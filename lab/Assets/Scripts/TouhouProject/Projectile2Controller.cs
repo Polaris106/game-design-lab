@@ -25,7 +25,6 @@ public class Projectile2Controller : MonoBehaviour
         if (kanakoController.currentHealth <= 200)
         {
             Destroy();
-
         }
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
 

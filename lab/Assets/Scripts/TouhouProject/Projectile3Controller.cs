@@ -34,7 +34,7 @@ public class Projectile3Controller : MonoBehaviour
         kanakoController = GameObject.Find("Kanako").GetComponent<KanakoController>();
         moveSpeed = 3f;
         timeToChangeMotion = 0.7f;
-        timeToChangeMotionAgain = Random.Range(3f, 5f);
+        timeToChangeMotionAgain = 2f;
         launchProbability = Random.Range(0, 2);
         rotatingAxis = new Vector3(0, 0, 1);
         rotationPoint = GameObject.Find("KanakoBackground").transform;
@@ -54,6 +54,11 @@ public class Projectile3Controller : MonoBehaviour
             Destroy();
 
         }
+    }
+
+    private void FixedUpdate()
+    {
+
         if (!motionChanged)
         {
             distanceMoved += movement.magnitude;
@@ -78,7 +83,7 @@ public class Projectile3Controller : MonoBehaviour
             if (launchProbability == 1)
             {
                 isRotating = false;
-                moveSpeed = 3f;
+                moveSpeed = 2f;
             }
             else
             {
@@ -150,10 +155,10 @@ public class Projectile3Controller : MonoBehaviour
             }
             turnInvisible();
         }
-        if (other.CompareTag("Projectile"))
-        {
-            Destroy();
-        }
+        //if (other.CompareTag("Projectile"))
+        //{
+        //    Destroy();
+        //}
 
     }
 
@@ -167,10 +172,9 @@ public class Projectile3Controller : MonoBehaviour
         undoInvisible();
         motionChanged = false;
         isRotating = false;
-        timeToChangeMotion = 0.7f;
-        timeToChangeMotionAgain = Random.Range(2f, 5f);
+        timeToChangeMotionAgain = 2f;
         distanceMoved = 0f;
-        moveSpeed = 3f;
+        moveSpeed = 2f;
         hasTeleported = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         gameObject.SetActive(false);

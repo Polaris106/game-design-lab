@@ -25,7 +25,7 @@ public class PlayerProjController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "EnemyProjectile")
+        if (col.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
 
