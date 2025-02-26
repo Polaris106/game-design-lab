@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TouhouProject.unity
     guid: fb5386691b7f4604ca96d6816264f55f
+  - enabled: 1
+    path: Assets/Scenes/Mario2.unity
+    guid: d9f3c5c4203ba0843bcb44f8974a3ab4
   m_configObjects: {}

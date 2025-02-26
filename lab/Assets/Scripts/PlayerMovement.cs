@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         marioAnimator.SetBool("onGround", onGroundState);
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -278,7 +279,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void ResetGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("MarioScene");
         gameControl.GetComponent<GameControl>().gameAudio.mute = false;
         gameControl.GetComponent<GameControl>().gameAudio.Play();
         //// reset position
