@@ -3740,7 +3740,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1262223531}
   - component: {fileID: 1262223533}
-  - component: {fileID: 1262223532}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -3763,19 +3762,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2096363496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1262223532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1262223530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 486b83b54a080e549abd228c1550f8b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextSceneName: Mario2
 --- !u!61 &1262223533
 BoxCollider2D:
   m_ObjectHideFlags: 0
