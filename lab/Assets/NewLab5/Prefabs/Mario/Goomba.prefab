@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4593791958426782580}
   - component: {fileID: 6049452113094231980}
   - component: {fileID: 153288370176292206}
-  - component: {fileID: 2915112684510685071}
   - component: {fileID: 5851488508870548632}
   - component: {fileID: 6868234075400545133}
   - component: {fileID: -614865212326101462}
@@ -163,23 +162,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2915112684510685071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7355155696346991794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2ffbba2d18371748ad153fc4e73b30e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPosition: {x: 0, y: 0, z: 0}
-  goombaIsAlive: 1
-  goombaAnimator: {fileID: 5851488508870548632}
-  goombaAudio: {fileID: 6868234075400545133}
-  goombaDeathAudio: {fileID: 8300000, guid: d84415726495b4d46b5a557ed2a97cfa, type: 3}
 --- !u!95 &5851488508870548632
 Animator:
   serializedVersion: 5
@@ -352,7 +334,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8009311215563528104}
   - component: {fileID: 8095527238707912327}
-  - component: {fileID: 7100777313156317078}
   m_Layer: 7
   m_Name: WeakPoint
   m_TagString: GoombaWeakpoint
@@ -416,16 +397,3 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &7100777313156317078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8295590359896321820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c015c798f03d8874086abe3df24f0ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goomba: {fileID: 7355155696346991794}

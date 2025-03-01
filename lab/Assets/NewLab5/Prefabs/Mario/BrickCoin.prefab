@@ -120,7 +120,6 @@ GameObject:
   - component: {fileID: 8980412435467709365}
   - component: {fileID: 6079653898420788160}
   - component: {fileID: 2794045125298988626}
-  - component: {fileID: 4972705707661223045}
   m_Layer: 8
   m_Name: Brick
   m_TagString: Ground
@@ -384,22 +383,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4972705707661223045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7546911694971261575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da929b0c6409044785fde2a907a5bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinAnimator: {fileID: 4101353899696076530}
-  questionBoxAudio: {fileID: 2794045125298988626}
-  questionBoxSpawnCoin: {fileID: 8300000, guid: d885ffc842af744d89f7d595ffcc176a, type: 3}
-  beenHit: 0
 --- !u!1 &9076007812416498325
 GameObject:
   m_ObjectHideFlags: 0

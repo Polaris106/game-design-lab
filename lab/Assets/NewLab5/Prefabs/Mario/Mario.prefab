@@ -264,7 +264,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3010760750366599427}
-  - component: {fileID: 1366698457266035108}
   m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
@@ -287,21 +286,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2978028843451418041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1366698457266035108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3250290759317612014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7edba8f92b695aa4b9ec9c65559c34c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 3010760750366599427}
-  projPrefab: {fileID: 6812968041199008393, guid: c6e6a31e627d4ea40ae2d185c9ea292a, type: 3}
-  projForce: 20
 --- !u!1 &4505042879396519118
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,12 +297,9 @@ GameObject:
   - component: {fileID: 963730819233076751}
   - component: {fileID: 5594747698127312135}
   - component: {fileID: 7501556797449447151}
-  - component: {fileID: 7485626695957348359}
   - component: {fileID: 8794607804631530435}
-  - component: {fileID: 2353637049423382599}
   - component: {fileID: 2515485444972689209}
   - component: {fileID: 7673632512616801487}
-  - component: {fileID: 8575029310377854111}
   - component: {fileID: 3749246307166222901}
   m_Layer: 10
   m_Name: Mario
@@ -424,35 +405,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7485626695957348359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4505042879396519118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f47eebe3a888c42bd563d8bc3b288e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
-  maxSpeed: 40
-  upSpeed: 25
-  scoreText: {fileID: 0}
-  enemies: {fileID: 0}
-  jumpOverGoomba: {fileID: 2353637049423382599}
-  onGroundState: 0
-  deathImpulse: 15
-  gameCamera: {fileID: 0}
-  firePoint1: {fileID: 145222364635729539}
-  firePoint2: {fileID: 1808421310123291737}
-  firePoint3: {fileID: 1674898278065921737}
-  marioAudio: {fileID: 7673632512616801487}
-  marioDeath: {fileID: 8300000, guid: bbcc7770a72095549a6edd5acd4372a4, type: 3}
-  teleportingAudio: {fileID: 8300000, guid: b520e6b32619c490a934225b9b162dc2, type: 3}
-  slamGround: {fileID: 8300000, guid: c738f1c61166b40e19d4d970e7b9c9df, type: 3}
-  marioAnimator: {fileID: 2515485444972689209}
 --- !u!61 &8794607804631530435
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -498,25 +450,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8151533, y: 1.0015408}
   m_EdgeRadius: 0
---- !u!114 &2353637049423382599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4505042879396519118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7feb520f0d98ec4419c4c97cff4d2995, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyLocation: {fileID: 0}
-  scoreText: {fileID: 0}
-  boxSize: {x: 0.8, y: 0.5, z: 0}
-  maxDistance: 0.75
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!95 &2515485444972689209
 Animator:
   serializedVersion: 5
@@ -634,78 +567,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8575029310377854111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4505042879396519118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a05a81910d9568b439287d1eb671ad7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jump:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7485626695957348359}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: Jump
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  jumpHold:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7485626695957348359}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: JumpHold
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  moveCheck:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7485626695957348359}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: MoveCheck
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  slam:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7485626695957348359}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: Slam
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &3749246307166222901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,7 +594,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8575029310377854111}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ActionManager, Assembly-CSharp
         m_MethodName: OnMoveAction
         m_Mode: 0
@@ -749,7 +610,7 @@ MonoBehaviour:
     m_ActionName: gameplay/move[/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8575029310377854111}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ActionManager, Assembly-CSharp
         m_MethodName: OnJumpAction
         m_Mode: 0
@@ -765,7 +626,7 @@ MonoBehaviour:
     m_ActionName: gameplay/jump[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8575029310377854111}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ActionManager, Assembly-CSharp
         m_MethodName: OnJumpHoldAction
         m_Mode: 0
@@ -781,7 +642,7 @@ MonoBehaviour:
     m_ActionName: gameplay/jumphold[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8575029310377854111}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ActionManager, Assembly-CSharp
         m_MethodName: OnClickAction
         m_Mode: 0
@@ -797,7 +658,7 @@ MonoBehaviour:
     m_ActionName: gameplay/click[/Mouse/leftButton,/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8575029310377854111}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ActionManager, Assembly-CSharp
         m_MethodName: OnPointAction
         m_Mode: 0
@@ -813,7 +674,7 @@ MonoBehaviour:
     m_ActionName: gameplay/point[/Mouse/leftButton,/Mouse/position]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8575029310377854111}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ActionManager, Assembly-CSharp
         m_MethodName: OnSlamAction
         m_Mode: 0
@@ -841,7 +702,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1979861654482482041}
-  - component: {fileID: 8898146105326083298}
   m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
@@ -864,21 +724,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8852385765735632167}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8898146105326083298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5486620729073063021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7edba8f92b695aa4b9ec9c65559c34c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 1979861654482482041}
-  projPrefab: {fileID: 6812968041199008393, guid: c6e6a31e627d4ea40ae2d185c9ea292a, type: 3}
-  projForce: 20
 --- !u!1 &6651797560504198963
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +733,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3382716241954778013}
-  - component: {fileID: 5382218260758121639}
   m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
@@ -911,18 +755,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 774109910126378902}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5382218260758121639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6651797560504198963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7edba8f92b695aa4b9ec9c65559c34c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 3382716241954778013}
-  projPrefab: {fileID: 6812968041199008393, guid: c6e6a31e627d4ea40ae2d185c9ea292a, type: 3}
-  projForce: 20
