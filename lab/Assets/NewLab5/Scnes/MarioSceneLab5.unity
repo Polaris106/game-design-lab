@@ -131,7 +131,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 18302661}
-  - component: {fileID: 18302660}
   - component: {fileID: 18302662}
   m_Layer: 0
   m_Name: GameControl
@@ -140,39 +139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &18302660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 18302659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f219303b40e84f45aaea384d25bda28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  superMarioLogo: {fileID: 862100739}
-  startButton: {fileID: 1721481128}
-  gameOverMenuPanel: {fileID: 194090830}
-  restartButton: {fileID: 1694394769}
-  scoreTextObject: {fileID: 653018079}
-  canvas: {fileID: 1360345551}
-  scoreTextGUI: {fileID: 653018081}
-  prevScene: 
-  currentScene: 
-  canFly: 0
-  canShoot: 0
-  gameAudio: {fileID: 18302662}
-  touhouProjectTheme: {fileID: 8300000, guid: c92cdd49edf4d324b85c0a8aa1cee45b, type: 3}
-  touhouProjectTheme2: {fileID: 8300000, guid: 67aa9a70e261cf047acf42799b3d7b5e, type: 3}
-  marioTheme: {fileID: 8300000, guid: a396fb5db437f453d89c54963e7b9719, type: 3}
-  gameStart: 0
-  alrCalled: 0
-  enteringScene: 1
-  musicPlayed: 0
-  score: 0
-  highScore: 0
 --- !u!4 &18302661
 Transform:
   m_ObjectHideFlags: 0
@@ -1284,7 +1250,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1366,20 +1331,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea615a67b390b35439174f16cc406ddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endLimitX: {fileID: 1624143407}
-  endLimitY: {fileID: 988918800}
 --- !u!1 &532928585
 GameObject:
   m_ObjectHideFlags: 0
