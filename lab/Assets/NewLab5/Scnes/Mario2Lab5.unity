@@ -165,6 +165,7 @@ MonoBehaviour:
   canShoot: 0
   gameAudio: {fileID: 18302662}
   touhouProjectTheme: {fileID: 0}
+  touhouProjectTheme2: {fileID: 0}
   marioTheme: {fileID: 0}
   gameStart: 0
   alrCalled: 0
@@ -954,6 +955,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &506018072
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 963730819233076751, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 963730819233076751, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 963730819233076751, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 963730819233076751, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 963730819233076751, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 963730819233076751, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 963730819233076751, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 963730819233076751, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 963730819233076751, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 963730819233076751, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505042879396519118, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      propertyPath: m_Name
+      value: Mario (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4129,130 +4187,6 @@ Transform:
   - {fileID: 1287241160}
   m_Father: {fileID: 2006548785}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2089099427
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 145222364635729539, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_Name
-      value: FirePoint1
-      objectReference: {fileID: 0}
-    - target: {fileID: 145222364635729539, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 963730819233076751, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 23.896
-      objectReference: {fileID: 0}
-    - target: {fileID: 963730819233076751, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 963730819233076751, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 963730819233076751, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 963730819233076751, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 963730819233076751, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 963730819233076751, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 963730819233076751, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 963730819233076751, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 963730819233076751, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1674898278065921737, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_Name
-      value: FirePoint3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1674898278065921737, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1808421310123291737, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_Name
-      value: FirePoint2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1808421310123291737, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2353637049423382599, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505042879396519118, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: m_Name
-      value: Mario
-      objectReference: {fileID: 0}
-    - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: enemies
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: firePoint1
-      value: 
-      objectReference: {fileID: 2089099430}
-    - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: firePoint2
-      value: 
-      objectReference: {fileID: 2089099429}
-    - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: firePoint3
-      value: 
-      objectReference: {fileID: 2089099428}
-    - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-      propertyPath: gameCamera
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
---- !u!1 &2089099428 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1674898278065921737, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-  m_PrefabInstance: {fileID: 2089099427}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2089099429 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1808421310123291737, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-  m_PrefabInstance: {fileID: 2089099427}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2089099430 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 145222364635729539, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
-  m_PrefabInstance: {fileID: 2089099427}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2131680174
 GameObject:
   m_ObjectHideFlags: 0
@@ -4516,4 +4450,4 @@ SceneRoots:
   - {fileID: 998236042}
   - {fileID: 587680322}
   - {fileID: 1571670817}
-  - {fileID: 2089099427}
+  - {fileID: 506018072}
