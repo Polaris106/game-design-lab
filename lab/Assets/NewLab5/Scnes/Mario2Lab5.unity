@@ -2302,7 +2302,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1228457924}
-  - component: {fileID: 1228457925}
   m_Layer: 0
   m_Name: GameOverMenu
   m_TagString: Untagged
@@ -2326,22 +2325,6 @@ Transform:
   - {fileID: 194090831}
   m_Father: {fileID: 1360345555}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1228457925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228457923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 592e5ccd5e770764d915d41e73b13818, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverScoreText: {fileID: 1812529734}
-  gameOverHighScoreText: {fileID: 0}
-  gameControl: {fileID: 18302659}
-  gameOverMenuPanel: {fileID: 194090830}
 --- !u!1 &1285672487
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,7 +2483,6 @@ GameObject:
   - component: {fileID: 1360345554}
   - component: {fileID: 1360345553}
   - component: {fileID: 1360345552}
-  - component: {fileID: 1360345556}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2595,22 +2577,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1360345556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1360345551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09f14758ab8073c4ba4ea53910623f9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillsPanel: {fileID: 747787188}
-  flyIcon: {fileID: 1078396795}
-  shootIcon: {fileID: 0}
-  gameControl: {fileID: 18302659}
 --- !u!4 &1483546830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1291564502253013591, guid: 0c419b6ac29889b47bb5e8ad1926391b, type: 3}
@@ -2628,7 +2594,6 @@ GameObject:
   - component: {fileID: 1522432065}
   - component: {fileID: 1522432064}
   - component: {fileID: 1522432063}
-  - component: {fileID: 1522432062}
   - component: {fileID: 1522432061}
   m_Layer: 5
   m_Name: RestartButton
@@ -2672,18 +2637,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 4, y: -4}
   m_UseGraphicAlpha: 1
---- !u!114 &1522432062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1522432059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e5faab4f6d1aad46b0da4a3a776cf77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1522432063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2728,7 +2681,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1522432062}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RestartButton, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -3384,7 +3337,6 @@ GameObject:
   - component: {fileID: 1694394773}
   - component: {fileID: 1694394772}
   - component: {fileID: 1694394771}
-  - component: {fileID: 1694394774}
   - component: {fileID: 1694394775}
   m_Layer: 5
   m_Name: RestartButton
@@ -3457,7 +3409,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1694394774}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RestartButton, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -3507,18 +3459,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694394769}
   m_CullTransparentMesh: 1
---- !u!114 &1694394774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694394769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e5faab4f6d1aad46b0da4a3a776cf77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1694394775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3681,7 +3621,6 @@ GameObject:
   - component: {fileID: 1721481132}
   - component: {fileID: 1721481131}
   - component: {fileID: 1721481130}
-  - component: {fileID: 1721481134}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -3768,7 +3707,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1721481134}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -3818,18 +3757,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721481128}
   m_CullTransparentMesh: 1
---- !u!114 &1721481134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721481128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2089a5aa3c7fd5d44be30b9e31246e9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1802997283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1291564502253013591, guid: 0c419b6ac29889b47bb5e8ad1926391b, type: 3}
