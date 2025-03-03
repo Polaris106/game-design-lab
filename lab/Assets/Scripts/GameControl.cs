@@ -6,7 +6,7 @@ using TMPro;
 using TMPro.Examples;
 using UnityEngine.SceneManagement;
 
-public class GameControl : Singleton<GameControl>
+public class GameControl : MonoBehaviour
 {
     public GameObject superMarioLogo;
     public GameObject startButton;
@@ -39,13 +39,13 @@ public class GameControl : Singleton<GameControl>
     private GameObject mario;
  
 
-    override public void Awake()
-    {
-        base.Awake();
-        Debug.Log("awake called");
+    //override public void Awake()
+    //{
+    //    base.Awake();
+    //    Debug.Log("awake called");
         
 
-    }
+    //}
 
     // Start is called before the first frame update
     void Start()

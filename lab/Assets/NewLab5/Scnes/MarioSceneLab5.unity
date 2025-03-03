@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 18302661}
   - component: {fileID: 18302662}
+  - component: {fileID: 18302663}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -251,6 +252,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &18302663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18302659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f219303b40e84f45aaea384d25bda28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  superMarioLogo: {fileID: 862100739}
+  startButton: {fileID: 1721481128}
+  gameOverMenuPanel: {fileID: 194090830}
+  restartButton: {fileID: 1694394769}
+  scoreTextObject: {fileID: 653018079}
+  canvas: {fileID: 1360345551}
+  scoreTextGUI: {fileID: 653018081}
+  prevScene: 
+  currentScene: 
+  canFly: 0
+  canShoot: 0
+  gameAudio: {fileID: 616962452}
+  touhouProjectTheme: {fileID: 8300000, guid: c92cdd49edf4d324b85c0a8aa1cee45b, type: 3}
+  touhouProjectTheme2: {fileID: 8300000, guid: 67aa9a70e261cf047acf42799b3d7b5e, type: 3}
+  marioTheme: {fileID: 8300000, guid: a396fb5db437f453d89c54963e7b9719, type: 3}
+  gameStart: 0
+  alrCalled: 0
+  enteringScene: 1
+  musicPlayed: 0
+  score: 0
+  highScore: 0
 --- !u!1001 &43820074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1688,6 +1722,159 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &616962450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4505042879396519118, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+  m_PrefabInstance: {fileID: 839384819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &616962452 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7673632512616801487, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+  m_PrefabInstance: {fileID: 839384819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &616962458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616962450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f47eebe3a888c42bd563d8bc3b288e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  maxSpeed: 0
+  upSpeed: 0
+  scoreText: {fileID: 653018081}
+  enemies: {fileID: 1965984970}
+  jumpOverGoomba: {fileID: 616962466}
+  onGroundState: 1
+  deathImpulse: 0
+  gameCamera: {fileID: 519420032}
+  firePoint1: {fileID: 1017395143}
+  firePoint2: {fileID: 1610986544}
+  firePoint3: {fileID: 1632106856}
+  marioAudio: {fileID: 616962452}
+  marioDeath: {fileID: 8300000, guid: bbcc7770a72095549a6edd5acd4372a4, type: 3}
+  teleportingAudio: {fileID: 8300000, guid: b520e6b32619c490a934225b9b162dc2, type: 3}
+  slamGround: {fileID: 8300000, guid: c738f1c61166b40e19d4d970e7b9c9df, type: 3}
+  marioAnimator: {fileID: 616962461}
+--- !u!114 &616962459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616962450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43135d5e3212aeb419e584bb58d61924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 73f2ec6e928141b469269ed3b6b5675f, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - {m_Target: {fileID: 616962458}, m_TargetAssemblyTypeName: , m_MethodName: , m_Mode: 0, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: , m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
+    m_CallsDirty: 1
+--- !u!95 &616962461 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2515485444972689209, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+  m_PrefabInstance: {fileID: 839384819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &616962466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616962450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7feb520f0d98ec4419c4c97cff4d2995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLocation: {fileID: 0}
+  scoreText: {fileID: 653018081}
+  boxSize: {x: 0.8, y: 0.5, z: 0}
+  maxDistance: 0.75
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &616962467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616962450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05a81910d9568b439287d1eb671ad7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 616962458}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  jumpHold:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 616962458}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: JumpHold
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  moveCheck:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 616962458}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: MoveCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  slam:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 616962458}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Slam
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &620722314
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,12 +2940,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4505042879396519118, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
       propertyPath: m_Name
-      value: Mario (1)
+      value: Mario
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4505042879396519118, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 616962459}
+    - targetCorrespondingSourceObject: {fileID: 4505042879396519118, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 616962466}
+    - targetCorrespondingSourceObject: {fileID: 4505042879396519118, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 616962458}
+    - targetCorrespondingSourceObject: {fileID: 4505042879396519118, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 616962467}
   m_SourcePrefab: {fileID: 100100000, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
 --- !u!1 &862100739
 GameObject:
@@ -3184,6 +3383,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1017395143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 145222364635729539, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+  m_PrefabInstance: {fileID: 839384819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1018386734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 118093363733477534, guid: a4d2154a796258e41b0547a6ebe5861a, type: 3}
@@ -4089,6 +4293,7 @@ GameObject:
   - component: {fileID: 1360345554}
   - component: {fileID: 1360345553}
   - component: {fileID: 1360345552}
+  - component: {fileID: 1360345556}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4183,6 +4388,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1360345556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360345551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f14758ab8073c4ba4ea53910623f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillsPanel: {fileID: 747787188}
+  flyIcon: {fileID: 1078396795}
+  shootIcon: {fileID: 1299682653}
+  gameControl: {fileID: 18302659}
 --- !u!1001 &1444201483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4920,6 +5141,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3680671581836380487, guid: 83bb8b17c4265bc4a99db36e5d3371ec, type: 3}
   m_PrefabInstance: {fileID: 3176630627778340397}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1610986544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1808421310123291737, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+  m_PrefabInstance: {fileID: 839384819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1624143406
 GameObject:
   m_ObjectHideFlags: 0
@@ -4997,6 +5223,11 @@ EdgeCollider2D:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5587950777586853685, guid: a7120422e6b934147a890b0048fc10b0, type: 3}
   m_PrefabInstance: {fileID: 4767645282019685934}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1632106856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1674898278065921737, guid: 0b9154f1f37db5c4ea741b5cbcdbce0e, type: 3}
+  m_PrefabInstance: {fileID: 839384819}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1661135263
 PrefabInstance:
@@ -5418,6 +5649,7 @@ GameObject:
   - component: {fileID: 1721481132}
   - component: {fileID: 1721481131}
   - component: {fileID: 1721481130}
+  - component: {fileID: 1721481134}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -5504,7 +5736,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1721481134}
         m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -5554,6 +5786,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721481128}
   m_CullTransparentMesh: 1
+--- !u!114 &1721481134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721481128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2089a5aa3c7fd5d44be30b9e31246e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1802997283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1291564502253013591, guid: 0c419b6ac29889b47bb5e8ad1926391b, type: 3}
