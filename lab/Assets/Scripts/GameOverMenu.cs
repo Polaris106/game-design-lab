@@ -10,6 +10,7 @@ public class GameOverMenu : MonoBehaviour
     public TextMeshProUGUI gameOverHighScoreText;
     public GameObject gameControl;
     public GameObject gameOverMenuPanel;
+    public IntVariable gameScore;
 
     private float score;
     private float highScore;
@@ -35,8 +36,8 @@ public class GameOverMenu : MonoBehaviour
             if (gameOver)
             {
                 gameOverMenuPanel.SetActive(true);
-                score = gameControl.GetComponent<GameControl>().score;
-                highScore = gameControl.GetComponent<GameControl>().highScore;
+                score = gameScore.Value;
+                highScore = gameScore.previousHighestValue;
                 gameOverHighScoreText.text = "HIGH SCORE: " + highScore.ToString();
                 gameOverScoreText.text = "SCORE: " + score.ToString();
 

@@ -8,6 +8,7 @@ public class RestartButton : MonoBehaviour
     private GameObject player;
     private GameObject gameControl;
     private string playerName = "";
+    public IntVariable gameScore;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class RestartButton : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerName = player.name;
         gameControl = GameObject.Find("GameControl");
-        gameControl.GetComponent<GameControl>().score = 0;
+        gameScore.Value = 0;
         // reset everything
         switch (playerName)
         {

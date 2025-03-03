@@ -158,6 +158,7 @@ MonoBehaviour:
   restartButton: {fileID: 1694394769}
   scoreTextObject: {fileID: 653018079}
   canvas: {fileID: 1360345551}
+  gameScore: {fileID: 11400000, guid: bad89b40915d93a41b66297d129335ca, type: 2}
   scoreTextGUI: {fileID: 653018081}
   prevScene: 
   currentScene: 
@@ -171,8 +172,6 @@ MonoBehaviour:
   alrCalled: 0
   enteringScene: 1
   musicPlayed: 0
-  score: 0
-  highScore: 0
 --- !u!4 &18302661
 Transform:
   m_ObjectHideFlags: 0
@@ -3509,6 +3508,7 @@ MonoBehaviour:
   gameOverHighScoreText: {fileID: 361293922}
   gameControl: {fileID: 18302659}
   gameOverMenuPanel: {fileID: 194090830}
+  gameScore: {fileID: 0}
 --- !u!4 &1234611335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2637276326371768758, guid: 346f1a699ba52364aa2465aac561d955, type: 3}
@@ -4177,6 +4177,7 @@ MonoBehaviour:
   skillsPanel: {fileID: 747787188}
   flyIcon: {fileID: 1078396795}
   shootIcon: {fileID: 1299682653}
+  gameScore: {fileID: 0}
   gameControl: {fileID: 18302659}
 --- !u!1001 &1444201483
 PrefabInstance:
@@ -4365,6 +4366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5faab4f6d1aad46b0da4a3a776cf77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameScore: {fileID: 0}
 --- !u!114 &1522432063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5285,6 +5287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5faab4f6d1aad46b0da4a3a776cf77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameScore: {fileID: 0}
 --- !u!114 &1694394775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7020,6 +7023,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1965984970}
     - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: gameScore
+      value: 
+      objectReference: {fileID: 11400000, guid: bad89b40915d93a41b66297d129335ca, type: 2}
+    - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 653018081}
@@ -7039,6 +7046,10 @@ PrefabInstance:
       propertyPath: gameCamera
       value: 
       objectReference: {fileID: 519420032}
+    - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: gameConstants
+      value: 
+      objectReference: {fileID: 11400000, guid: d5b755c953c9a58408a7b7b96fdacdc1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

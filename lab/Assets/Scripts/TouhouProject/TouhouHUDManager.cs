@@ -23,6 +23,7 @@ public class TouhouHUDManager : MonoBehaviour
     public TextMeshProUGUI stageCompleteScoreText;
     public TextMeshProUGUI stageCompleteHighScoreText;
     public int lineNumber = 0;
+    public IntVariable gameScore;
 
     private GameObject gameControl;
     private GameControl gameControlScript;
@@ -38,8 +39,8 @@ public class TouhouHUDManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + gameControlScript.score.ToString();
-        highScoreText.text = "High Score: " + gameControlScript.highScore.ToString();
+        scoreText.text = "Score: " + gameScore.Value.ToString();
+        highScoreText.text = "High Score: " + gameScore.previousHighestValue.ToString();
         if (gameControlScript.gameOver)
         {
             restartButton.SetActive(false);
@@ -55,8 +56,8 @@ public class TouhouHUDManager : MonoBehaviour
                 if (countdown <= 0)
                 {
                     stageCompletePanel.SetActive(true);
-                    stageCompleteScoreText.text = "Score: " + gameControlScript.score.ToString();
-                    stageCompleteHighScoreText.text = "High Score: " + gameControlScript.highScore.ToString();
+                    stageCompleteScoreText.text = "Score: " + gameScore.Value.ToString();
+                    stageCompleteHighScoreText.text = "High Score: " + gameScore.previousHighestValue.ToString();
                 }
             }
             else

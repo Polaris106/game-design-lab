@@ -6,7 +6,7 @@ using TMPro;
 using TMPro.Examples;
 using UnityEngine.SceneManagement;
 
-public class GameControl : Singleton<GameControl>
+public class GameControl : MonoBehaviour
 {
     public GameObject superMarioLogo;
     public GameObject startButton;
@@ -14,7 +14,8 @@ public class GameControl : Singleton<GameControl>
     public GameObject restartButton;
     public GameObject scoreTextObject;
     public GameObject canvas;
-    
+    public IntVariable gameScore;
+
     public TextMeshProUGUI scoreTextGUI;
     public string prevScene;
     public string currentScene;
@@ -33,19 +34,15 @@ public class GameControl : Singleton<GameControl>
     public bool enteringScene = true;
     public bool musicPlayed = false;
 
-    public int score = 0;   // variables under System.NonSerialized will not appear in inspector
-    public int highScore = 0;
-
     private GameObject mario;
- 
 
-    override public void Awake()
-    {
-        base.Awake();
-        Debug.Log("awake called");
+    //override public void Awake()
+    //{
+    //    base.Awake();
+    //    Debug.Log("awake called");
         
 
-    }
+    //}
 
     // Start is called before the first frame update
     void Start()
@@ -54,16 +51,13 @@ public class GameControl : Singleton<GameControl>
         startButton.SetActive(true);
         superMarioLogo.SetActive(true);
         currentScene = "MarioScene";
-        
+        // reset score
+        gameScore.Value = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (highScore < score)
-        {
-            highScore = score;
-        }
         if (mario == null)
         {
             mario = GameObject.Find("Mario");
@@ -129,7 +123,7 @@ public class GameControl : Singleton<GameControl>
 
                 restartButton.SetActive(true);
                 scoreTextObject.SetActive(true);
-                scoreTextGUI.text = "Score: " + score.ToString();
+                scoreTextGUI.text = "Score: " + gameScore.Value.ToString();
             }
         }
 
@@ -145,7 +139,7 @@ public class GameControl : Singleton<GameControl>
 
     public void addScore()
     {
-        score++;
-        Debug.Log("Score: " + score);
+        gameScore.ApplyChange(1);
+        Debug.Log("Score: " + gameScore.Value);
     }
 }

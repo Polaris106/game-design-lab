@@ -7,15 +7,15 @@ using Unity.VisualScripting;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 10;
-    public float maxSpeed = 20;
-    public float upSpeed = 10;
+
     public TextMeshProUGUI scoreText;
     public GameObject enemies;
     public JumpOverGoomba jumpOverGoomba; 
     public bool onGroundState = true;
+    public GameConstants gameConstants;
+    public IntVariable gameScore;
 
-    public float deathImpulse = 15;
+
     public Transform gameCamera;
     public GameObject firePoint1;
     public GameObject firePoint2;
@@ -46,11 +46,20 @@ public class PlayerMovement : MonoBehaviour
     private bool moving = false;
     private bool jumpedState = false;
     private string telePipeName;
-
+    private float speed;
+    private float maxSpeed;
+    private float upSpeed;
+    private float deathImpulse;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Set constants
+        speed = gameConstants.speed;
+        maxSpeed = gameConstants.maxSpeed;
+        deathImpulse = gameConstants.deathImpulse;
+        upSpeed = gameConstants.upSpeed;
+
         Application.targetFrameRate = 30;
         marioBody = GetComponent<Rigidbody2D>();
         marioSprite = GetComponent<SpriteRenderer>();
@@ -266,8 +275,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.CompareTag("GoombaWeakpoint") && alive && !onGroundState)
         {
-            gameControl.GetComponent<GameControl>().addScore();
-            scoreText.text = "Score: " + gameControl.GetComponent<GameControl>().score;
+            gameScore.ApplyChange(1);
+            scoreText.text = "Score: " + gameScore.Value;
         }
 
         if (other.gameObject.CompareTag("PipeTeleport"))

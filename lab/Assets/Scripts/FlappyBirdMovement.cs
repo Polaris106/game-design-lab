@@ -12,6 +12,7 @@ public class FlappyBirdMovement : MonoBehaviour
     public AudioSource flappyBirdAudio;
     public AudioClip teleportingAudio;
     public AudioClip coinAudio;
+    public IntVariable gameScore;
 
     [System.NonSerialized]
     public bool isAlive = true;
@@ -113,6 +114,6 @@ public class FlappyBirdMovement : MonoBehaviour
         gameControl.GetComponent<GameControl>().currentScene = "MarioScene";
         gameControl.GetComponent<GameControl>().prevScene = null;
         // reset score
-        gameControl.GetComponent<GameControl>().score = 0;
+        gameScore.Value = 0;
     }
 }
