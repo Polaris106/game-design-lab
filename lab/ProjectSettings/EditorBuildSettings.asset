@@ -18,15 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Mario2.unity
     guid: d9f3c5c4203ba0843bcb44f8974a3ab4
   - enabled: 0
-    path: Assets/NewLab5/Scenes/MarioSceneLab5.unity
+    path: Assets/NewLab5/Scenes (not in use)/MarioSceneLab5.unity
     guid: e7a964730796e52478ed54ba19e9bbb6
   - enabled: 0
-    path: Assets/NewLab5/Scenes/FlappyBirdScene.unity
+    path: Assets/NewLab5/Scenes (not in use)/FlappyBirdScene.unity
     guid: 835b0357321768b4697a062d02325320
   - enabled: 0
-    path: Assets/NewLab5/Scenes/TouhouProject.unity
+    path: Assets/NewLab5/Scenes (not in use)/TouhouProject.unity
     guid: 9e20bc1ff1d47924190a816a320220ec
   - enabled: 0
-    path: Assets/NewLab5/Scenes/Mario2Lab5.unity
+    path: Assets/NewLab5/Scenes (not in use)/Mario2Lab5.unity
     guid: 3ee597dc7da8f5c488a0f1a0bd5b24d8
   m_configObjects: {}

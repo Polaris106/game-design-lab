@@ -3508,7 +3508,7 @@ MonoBehaviour:
   gameOverHighScoreText: {fileID: 361293922}
   gameControl: {fileID: 18302659}
   gameOverMenuPanel: {fileID: 194090830}
-  gameScore: {fileID: 0}
+  gameScore: {fileID: 11400000, guid: bad89b40915d93a41b66297d129335ca, type: 2}
 --- !u!4 &1234611335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2637276326371768758, guid: 346f1a699ba52364aa2465aac561d955, type: 3}
@@ -4366,7 +4366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5faab4f6d1aad46b0da4a3a776cf77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameScore: {fileID: 0}
+  gameScore: {fileID: 11400000, guid: bad89b40915d93a41b66297d129335ca, type: 2}
 --- !u!114 &1522432063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5287,7 +5287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5faab4f6d1aad46b0da4a3a776cf77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameScore: {fileID: 0}
+  gameScore: {fileID: 11400000, guid: bad89b40915d93a41b66297d129335ca, type: 2}
 --- !u!114 &1694394775
 MonoBehaviour:
   m_ObjectHideFlags: 0
