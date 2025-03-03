@@ -44,7 +44,7 @@ public class MarioStateController : StateController
             spriteRenderer.enabled = !spriteRenderer.enabled;
 
             // Wait for the specified blink interval
-            yield return new WaitForSeconds(gameConstants.flickerInterval);
+            yield return new WaitForSeconds(0.01f);
         }
 
         spriteRenderer.enabled = true;
