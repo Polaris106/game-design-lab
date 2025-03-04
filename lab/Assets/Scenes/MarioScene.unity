@@ -7019,6 +7019,10 @@ PrefabInstance:
       value: Mario
       objectReference: {fileID: 0}
     - target: {fileID: 5594747698127312135, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300068, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
+    - target: {fileID: 5594747698127312135, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
