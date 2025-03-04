@@ -2844,6 +2844,32 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1 &958622956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4505042879396519118, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+  m_PrefabInstance: {fileID: 6879659511181857625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &958622967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958622956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f08b2cba9b0d364c8d1ef1ac9ea0b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startState: {fileID: 11400000, guid: 6f37c034605dea64198958f751dbc0eb, type: 2}
+  previousState: {fileID: 0}
+  currentState: {fileID: 0}
+  remainState: {fileID: 11400000, guid: 8e084bbbf5fdddf4fa9f94b8fcc59548, type: 2}
+  transitionStateChanged: 0
+  stateTimeElapsed: 0
+  isActive: 1
+  currentPowerupType: -1
+  shouldBeNextState: -1
 --- !u!1001 &980925187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7058,10 +7084,21 @@ PrefabInstance:
       propertyPath: gameConstants
       value: 
       objectReference: {fileID: 11400000, guid: d5b755c953c9a58408a7b7b96fdacdc1, type: 2}
+    - target: {fileID: 8794607804631530435, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794607804631530435, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4505042879396519118, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 958622967}
   m_SourcePrefab: {fileID: 100100000, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
 --- !u!1 &7381274518514679109 stripped
 GameObject:
