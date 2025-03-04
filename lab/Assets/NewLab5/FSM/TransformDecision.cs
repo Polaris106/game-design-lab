@@ -13,12 +13,14 @@ public class TransformDecision : Decision
         // convert between current state name into MarioState enum value using custom class EnumExtension
         // you are free to modify this to your own use
         MarioState toCompareState = EnumExtension.ParseEnum<MarioState>(m.currentState.name);
-
+        Debug.Log("Current state is " + toCompareState);
+        Debug.Log("Current PowerupType is " + m.currentPowerupType);
         // loop through state transform and see if it matches the current transformation we are looking for
         for (int i = 0; i < map.Length; i++)
         {
             if (toCompareState == map[i].fromState && m.currentPowerupType == map[i].powerupCollected)
             {
+                Debug.Log("Transforming from " + toCompareState + " due to " + map[i].powerupCollected);
                 return true;
             }
         }

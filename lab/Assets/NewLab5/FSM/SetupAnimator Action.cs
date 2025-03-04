@@ -10,5 +10,6 @@ public class SetupAnimator : Action
     public override void Act(StateController controller)
     {
         controller.gameObject.GetComponent<Animator>().runtimeAnimatorController = animatorController;
+        Debug.Log("Animator set to " + animatorController.name);
     }
 }
