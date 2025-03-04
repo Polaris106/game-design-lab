@@ -89,7 +89,7 @@ public class ActionManager : MonoBehaviour
         if (context.performed)
         {
             Vector2 point = context.ReadValue<Vector2>();
-            Debug.Log($"Point detected: {point}");
+            //Debug.Log($"Point detected: {point}");
 
         }
     }

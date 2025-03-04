@@ -23,6 +23,10 @@ public class TransformDecision : Decision
                 Debug.Log("Transforming from " + toCompareState + " due to " + map[i].powerupCollected);
                 return true;
             }
+
+            else {
+                //Debug.Log("toCompareState is " + map[i].fromState + ", map[i].fromState " + map[i].fromState + ", m.currentPowerupType is " + m.currentPowerupType + ", powerupCollected is " + map[i].powerupCollected);
+            } 
         }
 
         return false;

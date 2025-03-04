@@ -76,7 +76,7 @@ public class GoombaMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pipe"))
         {
-            Debug.Log("collided with pipe");
+            //Debug.Log("collided with pipe");
             collidedWithPipe = true;
         }
         if (other.gameObject.CompareTag("Projectile"))
