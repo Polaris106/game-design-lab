@@ -8067,6 +8067,58 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c048dd96e5fe390458f229c105e131c7, type: 2}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: be80442f805a97d44a2c4ae1d8d4ddca, type: 3}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: be5e2fa4-961f-4744-b520-3b42040c3c73
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: gameplay/fire[/Keyboard/x]
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6879659511181857640}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnFireAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActionManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749246307166222901, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4505042879396519118, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
       propertyPath: m_Name
       value: Mario
@@ -8129,6 +8181,86 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
       propertyPath: gameOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: slam.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: slam.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6879659511181857627}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6879659511181857634}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: slam.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6879659511181857627}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: slam.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: slam.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MarioStateController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: slam.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MarioStateController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: fire.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: slam.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8794607804631530435, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
@@ -8219,6 +8351,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6879659511181857640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8575029310377854111, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+  m_PrefabInstance: {fileID: 6879659511181857625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6879659511181857626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05a81910d9568b439287d1eb671ad7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7381274518514679109 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 145222364635729539, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
