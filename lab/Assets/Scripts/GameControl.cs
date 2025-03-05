@@ -53,7 +53,7 @@ public class GameControl : MonoBehaviour
         //superMarioLogo.SetActive(true);
         currentScene = "MarioScene";
         // reset score
-        gameScore.Value = 0;
+        //gameScore.Value = 0;
     }
 
     // Update is called once per frame

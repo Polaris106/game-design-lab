@@ -480,6 +480,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2915112684510685071, guid: ff30746cd359b4149bd010530ea17228, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049452113094231980, guid: ff30746cd359b4149bd010530ea17228, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049452113094231980, guid: ff30746cd359b4149bd010530ea17228, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7355155696346991794, guid: ff30746cd359b4149bd010530ea17228, type: 3}
       propertyPath: m_Name
       value: Goomba
@@ -4281,6 +4293,7 @@ GameObject:
   - component: {fileID: 1262223531}
   - component: {fileID: 1262223533}
   - component: {fileID: 1262223532}
+  - component: {fileID: 1262223534}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -4316,6 +4329,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: Mario2
+  teleportAudio: {fileID: 1262223534}
+  teleportClip: {fileID: 8300000, guid: b520e6b32619c490a934225b9b162dc2, type: 3}
 --- !u!61 &1262223533
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4361,6 +4376,102 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!82 &1262223534
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262223530}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1285672487
 GameObject:
   m_ObjectHideFlags: 0
@@ -6028,7 +6139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1291564502253013591, guid: 0c419b6ac29889b47bb5e8ad1926391b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.03
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 1291564502253013591, guid: 0c419b6ac29889b47bb5e8ad1926391b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6770,7 +6881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1291564502253013591, guid: 0c419b6ac29889b47bb5e8ad1926391b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.03
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 1291564502253013591, guid: 0c419b6ac29889b47bb5e8ad1926391b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6832,7 +6943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1291564502253013591, guid: 0c419b6ac29889b47bb5e8ad1926391b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.03
+      value: -0.110000014
       objectReference: {fileID: 0}
     - target: {fileID: 1291564502253013591, guid: 0c419b6ac29889b47bb5e8ad1926391b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6889,7 +7000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6673394830840945188, guid: 9ca7d62af7f868644b249b2fdccda203, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.03
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 6673394830840945188, guid: 9ca7d62af7f868644b249b2fdccda203, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8066,7 +8177,7 @@ PrefabInstance:
     - target: {fileID: 2515485444972689209, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: c048dd96e5fe390458f229c105e131c7, type: 2}
+      objectReference: {fileID: 9100000, guid: f14ec34e785098745a20bbe2f200f168, type: 2}
     - target: {fileID: 4505042879396519118, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
       propertyPath: m_Name
       value: Mario
@@ -8103,6 +8214,10 @@ PrefabInstance:
       propertyPath: gameConstants
       value: 
       objectReference: {fileID: 11400000, guid: d5b755c953c9a58408a7b7b96fdacdc1, type: 2}
+    - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: marioTransformAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 26301d2e86e99420599e315297a825df, type: 3}
     - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
       propertyPath: gameOver.m_PersistentCalls.m_Calls.Array.size
       value: 1

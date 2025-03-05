@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GoombaMovement : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GoombaMovement : MonoBehaviour
     public Animator goombaAnimator;
     public AudioSource goombaAudio;
     public AudioClip goombaDeathAudio;
+    public UnityEvent damagePlayer;
 
     private float originalX;
     private float maxOffset = 5.0f;
@@ -74,6 +76,14 @@ public class GoombaMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (other.gameObject.GetComponent<PlayerMovement>().onGroundState)
+            {
+                damagePlayer.Invoke();
+            }
+
+        }
         if (other.gameObject.CompareTag("Pipe"))
         {
             //Debug.Log("collided with pipe");

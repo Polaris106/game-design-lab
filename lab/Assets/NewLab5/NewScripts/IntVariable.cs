@@ -7,6 +7,7 @@ public class IntVariable : Variable<int>
 {
 
     public int previousHighestValue;
+
     public override void SetValue(int value)
     {
         if (value > previousHighestValue) previousHighestValue = value;

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class NextScene : MonoBehaviour
 {
     public string nextSceneName = "Mario2";
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")

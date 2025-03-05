@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip marioDeath;
     public AudioClip teleportingAudio;
     public AudioClip slamGround;
+    public AudioClip marioTransformAudio;
 
     // state
     [System.NonSerialized]
@@ -255,6 +256,8 @@ public class PlayerMovement : MonoBehaviour
 
     void GameOver()
     {
+
+        alive = false;
         // set gameover scene
         InvokeGameOver();
     }
@@ -266,6 +269,8 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayDeathImpulse()
     {
+        gameControl.GetComponent<GameControl>().gameAudio.mute = true;
+        marioAudio.PlayOneShot(marioDeath);
         marioBody.AddForce(Vector2.up * deathImpulse, ForceMode2D.Impulse);
     }
 
@@ -276,6 +281,7 @@ public class PlayerMovement : MonoBehaviour
         // pass this to StateController to see if Mario should start game over
         // since both state StateController and MarioStateController are on the same gameobject, it's ok to cross-refer between scripts
         GetComponent<MarioStateController>().SetPowerup(PowerupType.Damage);
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -311,6 +317,11 @@ public class PlayerMovement : MonoBehaviour
     {
         // play jump sound
         marioAudio.PlayOneShot(marioAudio.clip);
+    }
+
+    void PlayTransformSound()
+    {
+        marioAudio.PlayOneShot(marioTransformAudio);
     }
 
     public void ResetGame()
