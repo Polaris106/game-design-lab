@@ -125,7 +125,7 @@ public class TouhouPlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1) && isAlive && gameControlScript.gameStart)
+        if (Input.GetMouseButtonDown(1) && isAlive)
         {
             if (isReimu)
             {

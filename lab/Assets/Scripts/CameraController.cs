@@ -15,6 +15,7 @@ public class CameraController : MonoBehaviour
     private float endY; // largest y-coordinate of the camera
     private float viewportHalfWidthX;
     private float viewportHalfHeightY;
+    private Transform startPosition;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class CameraController : MonoBehaviour
         endY = endLimitY.transform.position.y;
         this.transform.position = new Vector3(player.position.x + offsetX, this.transform.position.y, -10);
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        startPosition = this.transform;
     }
 
     void Update()
@@ -51,5 +53,13 @@ public class CameraController : MonoBehaviour
         //    this.transform.position = new Vector3(this.transform.position.x, player.position.y, this.transform.position.z);
         //}
 
+    }
+
+
+    public void GameRestart()
+    {
+        // reset camera position
+        transform.position = startPosition.position;
+        Debug.Log("position reset for camera");
     }
 }

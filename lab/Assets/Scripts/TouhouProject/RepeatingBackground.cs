@@ -30,7 +30,7 @@ public class RepeatingBackground : MonoBehaviour
         {
             RepositionBackground();
         }
-        if (gameControlScript.gameStart && !alrCalled)
+        if (!alrCalled)
         {
             alrCalled = true;
             rb2d.velocity = new Vector2(0, scrollSpeed);

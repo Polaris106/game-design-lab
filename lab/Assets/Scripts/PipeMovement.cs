@@ -23,7 +23,6 @@ public class PipeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameStart = gameControl.GetComponent<GameControl>().gameStart;
 
         if (isAlive && !startMoving)
         {

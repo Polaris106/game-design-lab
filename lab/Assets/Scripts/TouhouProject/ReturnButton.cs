@@ -28,6 +28,6 @@ public class ReturnButton : MonoBehaviour
         gameControlScript.enteringScene = true;
         gameControlScript.musicPlayed = false;
         gameControlScript.canShoot = true;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

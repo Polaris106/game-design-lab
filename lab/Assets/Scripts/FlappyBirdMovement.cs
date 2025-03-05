@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using TMPro.Examples;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class FlappyBirdMovement : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class FlappyBirdMovement : MonoBehaviour
     public AudioClip teleportingAudio;
     public AudioClip coinAudio;
     public IntVariable gameScore;
+    public UnityEvent incrementScore;
 
     [System.NonSerialized]
     public bool isAlive = true;
@@ -92,7 +94,7 @@ public class FlappyBirdMovement : MonoBehaviour
 
         if (col.gameObject.CompareTag("FlappyBirdCoin"))
         {
-            gameControl.GetComponent<GameControl>().addScore();
+            incrementScore.Invoke();
             flappyBirdAudio.PlayOneShot(coinAudio);
             Destroy(col.gameObject);
         }

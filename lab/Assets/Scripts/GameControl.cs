@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using TMPro.Examples;
 using UnityEngine;
 using TMPro;
-using TMPro.Examples;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GameControl : MonoBehaviour
 {
@@ -29,10 +29,11 @@ public class GameControl : MonoBehaviour
 
     [System.NonSerialized]
     public bool gameOver = false;
-    public bool gameStart = false;
+    //public bool gameStart = false;
     public bool alrCalled = false;
     public bool enteringScene = true;
     public bool musicPlayed = false;
+    public bool gamePaused = false;
 
     private GameObject mario;
 
@@ -48,8 +49,8 @@ public class GameControl : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0.0f;
-        startButton.SetActive(true);
-        superMarioLogo.SetActive(true);
+        //startButton.SetActive(true);
+        //superMarioLogo.SetActive(true);
         currentScene = "MarioScene";
         // reset score
         gameScore.Value = 0;
@@ -95,40 +96,32 @@ public class GameControl : MonoBehaviour
                 gameAudio.PlayOneShot(marioTheme);
                 canvas.SetActive(true);
             }
-   
-
         }
 
-        if (gameStart)
+
+        if (gameOver)
         {
-            if (!alrCalled)
-            {
-                Time.timeScale = 1.0f;
-                startButton.SetActive(false);
-                superMarioLogo.SetActive(false);
-                alrCalled = true;
-            }
-            if (gameOver)
-            {
-                Time.timeScale = 0.0f;
-                
-                //gameOverMenuPanel.SetActive(true);
-                restartButton.SetActive(false);
-                scoreTextObject.SetActive(false);
-            }
-            else if (!gameOver)
-            {
-                Time.timeScale = 1.0f;
-                //gameOverMenuPanel.SetActive(false);
+            Time.timeScale = 0.0f;
 
-                restartButton.SetActive(true);
-                scoreTextObject.SetActive(true);
-                scoreTextGUI.text = "Score: " + gameScore.Value.ToString();
-            }
+            //gameOverMenuPanel.SetActive(true);
+            restartButton.SetActive(false);
+            scoreTextObject.SetActive(false);
+        }
+        else if (!gameOver)
+        {
+            Time.timeScale = 1.0f;
+            //gameOverMenuPanel.SetActive(false);
+
+            restartButton.SetActive(true);
+            scoreTextObject.SetActive(true);
+            scoreTextGUI.text = "Score: " + gameScore.Value.ToString();
         }
 
+    }
 
-
+    public void SetGameOver()
+    {
+        gameOver = true;
     }
 
     public void PlayTouhouTheme2()
@@ -137,9 +130,18 @@ public class GameControl : MonoBehaviour
         gameAudio.PlayOneShot(touhouProjectTheme2);
     }
 
-    public void addScore()
+    public void AddScore()
     {
         gameScore.ApplyChange(1);
         Debug.Log("Score: " + gameScore.Value);
     }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1.0f;
+        startButton.SetActive(false);
+        superMarioLogo.SetActive(false);
+        alrCalled = true;
+    }
+
 }

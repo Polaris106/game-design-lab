@@ -38,7 +38,7 @@ public class KanakoShooting2 : MonoBehaviour
             StopShoot();
             firedOnce = false;
         }
-        else if (firedOnce == false && gameControlScript.gameStart)
+        else if (firedOnce == false)
         {
             kanakoAnimator.SetTrigger("skillActive");
             StartShoot();

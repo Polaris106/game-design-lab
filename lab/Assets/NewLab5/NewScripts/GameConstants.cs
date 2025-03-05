@@ -14,4 +14,5 @@ public class GameConstants : ScriptableObject
     public int upSpeed;
     public int deathImpulse;
 
+
 }
