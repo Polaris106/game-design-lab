@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public BoolVariable marioFaceRight;
     public TextMeshProUGUI scoreText;
     public GameObject enemies;
     public JumpOverGoomba jumpOverGoomba; 
@@ -85,8 +85,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FlipMarioSprite(int value)
     {
+        Debug.Log("FlipMarioSprite: " + value);
         if (value == -1 && faceRightState)
         {
+            updateMarioShouldFaceRight(false);
             faceRightState = false;
             marioSprite.flipX = true;
             if (marioBody.velocity.x > 0.05f)
@@ -96,11 +98,18 @@ public class PlayerMovement : MonoBehaviour
 
         else if (value == 1 && !faceRightState)
         {
+            updateMarioShouldFaceRight(true);
             faceRightState = true;
             marioSprite.flipX = false;
             if (marioBody.velocity.x < -0.05f)
                 marioAnimator.SetTrigger("onSkid");
         }
+    }
+
+    private void updateMarioShouldFaceRight(bool value)
+    {
+        faceRightState = value;
+        marioFaceRight.SetValue(faceRightState);
     }
 
     private void OnCollisionEnter2D(Collision2D col)
