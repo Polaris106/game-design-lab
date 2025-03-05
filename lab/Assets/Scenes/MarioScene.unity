@@ -8156,6 +8156,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d5b755c953c9a58408a7b7b96fdacdc1, type: 2}
     - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
+      propertyPath: marioFaceRight
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ac3eeb782b193a499264f56817d5fe4, type: 2}
+    - target: {fileID: 7485626695957348359, guid: a5b94f5d3982eca449da610e1a81f661, type: 3}
       propertyPath: gameOver.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
