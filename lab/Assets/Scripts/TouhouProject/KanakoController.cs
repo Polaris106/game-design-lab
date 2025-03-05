@@ -17,6 +17,7 @@ public class KanakoController : MonoBehaviour
     public bool secondPhase = false;
     public KanakoHealthBar healthBar;
     public float secondPhaseHealth = 400;
+    public IntVariable gameScore;
 
     private float maxHealth = 400;
     private GameObject gameControl;
@@ -38,10 +39,7 @@ public class KanakoController : MonoBehaviour
     void Update()
     {
 
-        if (gameControlScript.gameStart)
-        {
-            kanakoAnimator.SetTrigger("skillActive");
-        }
+        kanakoAnimator.SetTrigger("skillActive");
         if (!secondPhase)
         {
             if (currentHealth < 200 )
@@ -108,7 +106,7 @@ public class KanakoController : MonoBehaviour
 
     public void ScorePoints(int points)
     {
-        gameControlScript.score += points;
+        gameScore.ApplyChange(1);
        
     }
 

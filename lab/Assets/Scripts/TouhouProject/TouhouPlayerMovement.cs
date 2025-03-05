@@ -18,6 +18,7 @@ public class TouhouPlayerMovement : MonoBehaviour
     public GameObject reimuPortrait;
     public GameObject marisaPortrait;
     public TextMeshProUGUI characterName;
+    public IntVariable gameScore;
 
     [System.NonSerialized]
     public bool isAlive = true;
@@ -124,7 +125,7 @@ public class TouhouPlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1) && isAlive && gameControlScript.gameStart)
+        if (Input.GetMouseButtonDown(1) && isAlive)
         {
             if (isReimu)
             {
@@ -186,7 +187,7 @@ public class TouhouPlayerMovement : MonoBehaviour
         gameControlScript.currentScene = "MarioScene";
         gameControlScript.prevScene = null;
         // reset score
-        gameControlScript.score = 0;
+        gameScore.Value = 0;
     }
 
     void OnTriggerEnter2D(Collider2D col)

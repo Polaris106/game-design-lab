@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672b89ffdf35a8f4dbbac442657b56aa, type: 3}
+  m_Name: Fire
+  m_EditorClassIdentifier: 
+  setupActions:
+  - {fileID: 11400000, guid: 50dbe3ed0ce2b884f89c60b32353beba, type: 2}
+  - {fileID: 11400000, guid: 9b67ba04e601bbc439c9d3cc468394a8, type: 2}
+  actions: []
+  eventTriggeredActions:
+  - action: {fileID: 11400000, guid: 09ac9cdad4570e04b9af5fc7a447160b, type: 2}
+    type: 0
+  exitActions: []
+  transitions:
+  - decision: {fileID: 11400000, guid: 79669f2c09c562a40bdcbb3217127e92, type: 2}
+    trueState: {fileID: 11400000, guid: 02caf94e4d6136a4b8b7c769c1c41a31, type: 2}
+    falseState: {fileID: 11400000, guid: 8e084bbbf5fdddf4fa9f94b8fcc59548, type: 2}
+  sceneGizmoColor: {r: 0.9056604, g: 0.23495908, b: 0.23495908, a: 1}

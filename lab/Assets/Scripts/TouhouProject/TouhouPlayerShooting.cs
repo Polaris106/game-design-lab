@@ -29,7 +29,7 @@ public class TouhouPlayerShooting : MonoBehaviour
     void Update()
     {
         canFire += Time.deltaTime;
-        if (EnemyIsAlive() && gameControlScript.gameStart)
+        if (EnemyIsAlive())
         {
             if (kanakoController.currentHealth > 0)
             {

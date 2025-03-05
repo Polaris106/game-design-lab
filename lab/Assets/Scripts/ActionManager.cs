@@ -10,6 +10,7 @@ public class ActionManager : MonoBehaviour
     public UnityEvent jumpHold;
     public UnityEvent<int> moveCheck;
     public UnityEvent slam;
+    public UnityEvent fire;
 
     public void OnSlamAction(InputAction.CallbackContext context)
     {
@@ -89,9 +90,15 @@ public class ActionManager : MonoBehaviour
         if (context.performed)
         {
             Vector2 point = context.ReadValue<Vector2>();
-            Debug.Log($"Point detected: {point}");
+            //Debug.Log($"Point detected: {point}");
 
         }
+    }
+
+    public void OnFireAction(InputAction.CallbackContext context)
+
+    {
+        fire.Invoke();
     }
 
 }

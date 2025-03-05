@@ -180,6 +180,22 @@ MonoBehaviour:
   goombaAnimator: {fileID: 5851488508870548632}
   goombaAudio: {fileID: 6868234075400545133}
   goombaDeathAudio: {fileID: 8300000, guid: d84415726495b4d46b5a557ed2a97cfa, type: 3}
+  damagePlayer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a21b7c15e622166439c5d7d6526c5936, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[UnityEngine.Object, UnityEngine
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameScore: {fileID: 11400000, guid: bad89b40915d93a41b66297d129335ca, type: 2}
 --- !u!95 &5851488508870548632
 Animator:
   serializedVersion: 5

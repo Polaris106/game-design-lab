@@ -4,18 +4,19 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 10;
-    public float maxSpeed = 20;
-    public float upSpeed = 10;
+    public BoolVariable marioFaceRight;
     public TextMeshProUGUI scoreText;
     public GameObject enemies;
     public JumpOverGoomba jumpOverGoomba; 
     public bool onGroundState = true;
+    public GameConstants gameConstants;
+    public IntVariable gameScore;
+    public UnityEvent gameOver;
 
-    public float deathImpulse = 15;
     public Transform gameCamera;
     public GameObject firePoint1;
     public GameObject firePoint2;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip marioDeath;
     public AudioClip teleportingAudio;
     public AudioClip slamGround;
+    public AudioClip marioTransformAudio;
 
     // state
     [System.NonSerialized]
@@ -46,11 +48,20 @@ public class PlayerMovement : MonoBehaviour
     private bool moving = false;
     private bool jumpedState = false;
     private string telePipeName;
-
+    private float speed;
+    private float maxSpeed;
+    private float upSpeed;
+    private float deathImpulse;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Set constants
+        speed = gameConstants.speed;
+        maxSpeed = gameConstants.maxSpeed;
+        deathImpulse = gameConstants.deathImpulse;
+        upSpeed = gameConstants.upSpeed;
+
         Application.targetFrameRate = 30;
         marioBody = GetComponent<Rigidbody2D>();
         marioSprite = GetComponent<SpriteRenderer>();
@@ -75,8 +86,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FlipMarioSprite(int value)
     {
+        Debug.Log("FlipMarioSprite: " + value);
         if (value == -1 && faceRightState)
         {
+            updateMarioShouldFaceRight(false);
             faceRightState = false;
             marioSprite.flipX = true;
             if (marioBody.velocity.x > 0.05f)
@@ -86,11 +99,18 @@ public class PlayerMovement : MonoBehaviour
 
         else if (value == 1 && !faceRightState)
         {
+            updateMarioShouldFaceRight(true);
             faceRightState = true;
             marioSprite.flipX = false;
             if (marioBody.velocity.x < -0.05f)
                 marioAnimator.SetTrigger("onSkid");
         }
+    }
+
+    private void updateMarioShouldFaceRight(bool value)
+    {
+        faceRightState = value;
+        marioFaceRight.SetValue(faceRightState);
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -163,17 +183,16 @@ public class PlayerMovement : MonoBehaviour
                     gameControl.GetComponent<GameControl>().enteringScene = true;
                     isTeleporting = false;
                     gameControl.GetComponent<GameControl>().musicPlayed = false;
-                    SceneManager.LoadScene(1);
+                    SceneManager.LoadScene(2);
                 }
                 else if (telePipeName == "Pipe-Teleport-Touhou")
                 {
                     gameControl.GetComponent<GameControl>().currentScene = "TouhouProject";
                     gameControl.GetComponent<GameControl>().prevScene = "MarioScene";
                     gameControl.GetComponent<GameControl>().enteringScene = true;
-                    gameControl.GetComponent<GameControl>().gameStart = false;
                     isTeleporting = false;
                     gameControl.GetComponent<GameControl>().musicPlayed = false;
-                    SceneManager.LoadScene(2);
+                    SceneManager.LoadScene(3);
                 }
 
 
@@ -242,32 +261,54 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void GameOverScene()
+
+
+    void GameOver()
     {
+
+        alive = false;
         // set gameover scene
-        gameControl.GetComponent<GameControl>().gameOver = true; 
+        InvokeGameOver();
+    }
+
+    public void InvokeGameOver()
+    {
+        gameOver.Invoke();
     }
 
     void PlayDeathImpulse()
     {
+        gameControl.GetComponent<GameControl>().gameAudio.mute = true;
+        marioAudio.PlayOneShot(marioDeath);
         marioBody.AddForce(Vector2.up * deathImpulse, ForceMode2D.Impulse);
+    }
+
+    public void DamageMario()
+    {
+        // GameOverAnimationStart(); // last time Mario dies right away
+
+        // pass this to StateController to see if Mario should start game over
+        // since both state StateController and MarioStateController are on the same gameobject, it's ok to cross-refer between scripts
+        GetComponent<MarioStateController>().SetPowerup(PowerupType.Damage);
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") && alive && onGroundState)
-        {
-            // play death animation
-            marioAnimator.Play("Mario-Die");
-            gameControl.GetComponent<GameControl>().gameAudio.mute = true;
-            marioAudio.PlayOneShot(marioDeath);
-            alive = false;
-        }
+        //if (other.gameObject.CompareTag("Enemy") && alive && onGroundState)
+        //{
+        //    // play death animation
+        //    marioAnimator.Play("Mario-Die");
+        //    gameControl.GetComponent<GameControl>().gameAudio.mute = true;
+        //    marioAudio.PlayOneShot(marioDeath);
+        //    alive = false;
+
+        //}
 
         if (other.gameObject.CompareTag("GoombaWeakpoint") && alive && !onGroundState)
         {
-            gameControl.GetComponent<GameControl>().addScore();
-            scoreText.text = "Score: " + gameControl.GetComponent<GameControl>().score;
+            //gameScore.ApplyChange(1);
+            //scoreText.text = "Score: " + gameScore.Value;
         }
 
         if (other.gameObject.CompareTag("PipeTeleport"))
@@ -285,6 +326,28 @@ public class PlayerMovement : MonoBehaviour
     {
         // play jump sound
         marioAudio.PlayOneShot(marioAudio.clip);
+    }
+
+    void PlayTransformSound()
+    {
+        marioAudio.PlayOneShot(marioTransformAudio);
+    }
+
+    public void SetFirePointsActive()
+    {
+        firePoint1.SetActive(true);
+        firePoint2.SetActive(true);
+        firePoint3.SetActive(true);
+    }
+
+    public void muteBackgroundMusic()
+    {
+        gameControl.GetComponent<GameControl>().gameAudio.mute = true;
+    }
+
+    public void resumeBackgroundMusic()
+    {
+        gameControl.GetComponent<GameControl>().gameAudio.mute = false;
     }
 
     public void ResetGame()

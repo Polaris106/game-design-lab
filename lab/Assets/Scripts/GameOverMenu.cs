@@ -8,8 +8,8 @@ public class GameOverMenu : MonoBehaviour
 {
     public TextMeshProUGUI gameOverScoreText;
     public TextMeshProUGUI gameOverHighScoreText;
-    public GameObject gameControl;
     public GameObject gameOverMenuPanel;
+    public IntVariable gameScore;
 
     private float score;
     private float highScore;
@@ -19,33 +19,20 @@ public class GameOverMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameControl = GameObject.Find("GameControl");
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        gameOver = gameControl.GetComponent<GameControl>().gameOver;
-        gameStart = gameControl.GetComponent<GameControl>().gameStart;
+    }
 
-
-        if (gameStart)
-        {
-            if (gameOver)
-            {
-                gameOverMenuPanel.SetActive(true);
-                score = gameControl.GetComponent<GameControl>().score;
-                highScore = gameControl.GetComponent<GameControl>().highScore;
-                gameOverHighScoreText.text = "HIGH SCORE: " + highScore.ToString();
-                gameOverScoreText.text = "SCORE: " + score.ToString();
-
-            }
-            else if (!gameOver)
-            {
-                gameOverMenuPanel.SetActive(false);
-            }
-        }
-
+    public void ShowMenu()
+    {
+        gameOverMenuPanel.SetActive(true);
+        score = gameScore.Value;
+        highScore = gameScore.previousHighestValue;
+        gameOverHighScoreText.text = "HIGH SCORE: " + highScore.ToString();
+        gameOverScoreText.text = "SCORE: " + score.ToString();
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - Projectile
   - GoombaWeakpoint
   - EnemyProjectile
+  - Fireball
   layers:
   - Default
   - TransparentFX

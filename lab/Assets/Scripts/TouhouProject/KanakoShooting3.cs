@@ -46,7 +46,7 @@ public class KanakoShooting3 : MonoBehaviour
                 shootDuration = 0.1f;
             }
         }
-        else if (shootDuration > 0 && oneTime == false && gameControlScript.gameStart && kanakoControl.currentHealth >= 200 && !kanakoControl.secondPhase)
+        else if (shootDuration > 0 && oneTime == false &&  kanakoControl.currentHealth >= 200 && !kanakoControl.secondPhase)
         {
             kanakoAudio.PlayOneShot(kanakoShootAudio);
             Shoot();

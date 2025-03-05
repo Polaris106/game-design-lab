@@ -9,6 +9,7 @@ public class SanaeController : MonoBehaviour
     public KanakoHealthBar healthBar;
     public GameObject autoBall2;
     public bool inPosition = false;
+    public IntVariable gameScore;
 
     private float moveSpeed = 3f;
     private GameObject gameControl;
@@ -55,7 +56,7 @@ public class SanaeController : MonoBehaviour
 
     public void ScorePoints(int points)
     {
-        gameControlScript.score += points;
+        gameScore.ApplyChange(1);
 
     }
 

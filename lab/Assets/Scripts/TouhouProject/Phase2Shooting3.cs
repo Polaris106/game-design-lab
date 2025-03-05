@@ -38,7 +38,7 @@ public class Phase2Shooting3 : MonoBehaviour
                 StopShoot();
                 firedOnce = false;
             }
-            else if (firedOnce == false && gameControlScript.gameStart)
+            else if (firedOnce == false)
             {
                 StartShoot();
                 firedOnce = true;

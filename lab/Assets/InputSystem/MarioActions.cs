@@ -80,6 +80,15 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""be5e2fa4-961f-4744-b520-3b42040c3c73"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -236,6 +245,17 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                     ""action"": ""slam"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""58457692-6910-438f-9bc2-5a34861032d1"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -278,6 +298,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
         m_gameplay_click = m_gameplay.FindAction("click", throwIfNotFound: true);
         m_gameplay_point = m_gameplay.FindAction("point", throwIfNotFound: true);
         m_gameplay_slam = m_gameplay.FindAction("slam", throwIfNotFound: true);
+        m_gameplay_fire = m_gameplay.FindAction("fire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -345,6 +366,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_click;
     private readonly InputAction m_gameplay_point;
     private readonly InputAction m_gameplay_slam;
+    private readonly InputAction m_gameplay_fire;
     public struct GameplayActions
     {
         private @MarioActions m_Wrapper;
@@ -355,6 +377,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
         public InputAction @click => m_Wrapper.m_gameplay_click;
         public InputAction @point => m_Wrapper.m_gameplay_point;
         public InputAction @slam => m_Wrapper.m_gameplay_slam;
+        public InputAction @fire => m_Wrapper.m_gameplay_fire;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -382,6 +405,9 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
             @slam.started += instance.OnSlam;
             @slam.performed += instance.OnSlam;
             @slam.canceled += instance.OnSlam;
+            @fire.started += instance.OnFire;
+            @fire.performed += instance.OnFire;
+            @fire.canceled += instance.OnFire;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -404,6 +430,9 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
             @slam.started -= instance.OnSlam;
             @slam.performed -= instance.OnSlam;
             @slam.canceled -= instance.OnSlam;
+            @fire.started -= instance.OnFire;
+            @fire.performed -= instance.OnFire;
+            @fire.canceled -= instance.OnFire;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -447,5 +476,6 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
         void OnClick(InputAction.CallbackContext context);
         void OnPoint(InputAction.CallbackContext context);
         void OnSlam(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
     }
 }
