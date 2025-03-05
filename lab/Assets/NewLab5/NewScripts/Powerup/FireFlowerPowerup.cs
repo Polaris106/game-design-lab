@@ -46,7 +46,6 @@ public class FireFlowerPowerup : BasePowerup
     // interface implementation
     public override void ApplyPowerup(MonoBehaviour i)
     {
-
         // try
         MarioStateController mario;
         bool result = i.TryGetComponent<MarioStateController>(out mario);

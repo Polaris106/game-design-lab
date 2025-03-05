@@ -251,6 +251,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+
+
     void GameOver()
     {
         // set gameover scene
@@ -267,17 +269,26 @@ public class PlayerMovement : MonoBehaviour
         marioBody.AddForce(Vector2.up * deathImpulse, ForceMode2D.Impulse);
     }
 
+    public void DamageMario()
+    {
+        // GameOverAnimationStart(); // last time Mario dies right away
+
+        // pass this to StateController to see if Mario should start game over
+        // since both state StateController and MarioStateController are on the same gameobject, it's ok to cross-refer between scripts
+        GetComponent<MarioStateController>().SetPowerup(PowerupType.Damage);
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") && alive && onGroundState)
-        {
-            // play death animation
-            marioAnimator.Play("Mario-Die");
-            gameControl.GetComponent<GameControl>().gameAudio.mute = true;
-            marioAudio.PlayOneShot(marioDeath);
-            alive = false;
+        //if (other.gameObject.CompareTag("Enemy") && alive && onGroundState)
+        //{
+        //    // play death animation
+        //    marioAnimator.Play("Mario-Die");
+        //    gameControl.GetComponent<GameControl>().gameAudio.mute = true;
+        //    marioAudio.PlayOneShot(marioDeath);
+        //    alive = false;
 
-        }
+        //}
 
         if (other.gameObject.CompareTag("GoombaWeakpoint") && alive && !onGroundState)
         {

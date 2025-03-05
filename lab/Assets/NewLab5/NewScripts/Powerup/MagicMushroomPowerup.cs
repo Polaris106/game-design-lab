@@ -46,11 +46,10 @@ public class MagicMushroomPowerup : BasePowerup
     // interface implementation
     public override void ApplyPowerup(MonoBehaviour i)
     {
-
         // try
         MarioStateController mario;
         bool result = i.TryGetComponent<MarioStateController>(out mario);
-        Debug.Log(result);
+        Debug.Log("result is: " + result);
         if (result)
         {
             mario.SetPowerup((PowerupType)type);
