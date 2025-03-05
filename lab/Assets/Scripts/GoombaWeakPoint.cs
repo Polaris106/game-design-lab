@@ -28,6 +28,7 @@ public class GoombaWeakPoint : MonoBehaviour
                 BoxCollider2D boxCollider = goomba.GetComponent<BoxCollider2D>();
                 boxCollider.enabled = false;
                 goomba.GetComponent<GoombaMovement>().goombaIsAlive = false;
+                this.gameObject.SetActive(false);
             }
 
         }

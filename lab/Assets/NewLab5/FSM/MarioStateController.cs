@@ -38,13 +38,13 @@ public class MarioStateController : StateController
     private IEnumerator BlinkSpriteRenderer()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        while (string.Equals(currentState.name, "InvincibleSmallMario", StringComparison.OrdinalIgnoreCase))
+        while (string.Equals(currentState.name, "InvincibleSmall", StringComparison.OrdinalIgnoreCase))
         {
             // Toggle the visibility of the sprite renderer
             spriteRenderer.enabled = !spriteRenderer.enabled;
 
             // Wait for the specified blink interval
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.05f);
         }
 
         spriteRenderer.enabled = true;
