@@ -74,7 +74,6 @@ public class TouhouHUDManager : MonoBehaviour
 
     public void StartGame()
     {
-        gameControlScript.gameStart = true;
         kanakoHealthBar.SetActive(true);
         speechBox.SetActive(false);
     }

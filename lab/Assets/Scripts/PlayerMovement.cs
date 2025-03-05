@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public bool onGroundState = true;
     public GameConstants gameConstants;
     public IntVariable gameScore;
-
+    public UnityEvent gameOver;
 
     public Transform gameCamera;
     public GameObject firePoint1;
@@ -172,17 +173,16 @@ public class PlayerMovement : MonoBehaviour
                     gameControl.GetComponent<GameControl>().enteringScene = true;
                     isTeleporting = false;
                     gameControl.GetComponent<GameControl>().musicPlayed = false;
-                    SceneManager.LoadScene(1);
+                    SceneManager.LoadScene(2);
                 }
                 else if (telePipeName == "Pipe-Teleport-Touhou")
                 {
                     gameControl.GetComponent<GameControl>().currentScene = "TouhouProject";
                     gameControl.GetComponent<GameControl>().prevScene = "MarioScene";
                     gameControl.GetComponent<GameControl>().enteringScene = true;
-                    gameControl.GetComponent<GameControl>().gameStart = false;
                     isTeleporting = false;
                     gameControl.GetComponent<GameControl>().musicPlayed = false;
-                    SceneManager.LoadScene(2);
+                    SceneManager.LoadScene(3);
                 }
 
 
@@ -251,10 +251,15 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void GameOverScene()
+    void GameOver()
     {
         // set gameover scene
-        gameControl.GetComponent<GameControl>().gameOver = true; 
+        InvokeGameOver();
+    }
+
+    public void InvokeGameOver()
+    {
+        gameOver.Invoke();
     }
 
     void PlayDeathImpulse()
@@ -271,6 +276,7 @@ public class PlayerMovement : MonoBehaviour
             gameControl.GetComponent<GameControl>().gameAudio.mute = true;
             marioAudio.PlayOneShot(marioDeath);
             alive = false;
+
         }
 
         if (other.gameObject.CompareTag("GoombaWeakpoint") && alive && !onGroundState)

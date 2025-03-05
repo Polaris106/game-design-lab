@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class RestartButton : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class RestartButton : MonoBehaviour
     private GameObject gameControl;
     private string playerName = "";
     public IntVariable gameScore;
+    public UnityEvent gameRestart;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,7 @@ public class RestartButton : MonoBehaviour
         playerName = player.name;
         gameControl = GameObject.Find("GameControl");
         gameScore.Value = 0;
+        gameRestart.Invoke();
         // reset everything
         switch (playerName)
         {

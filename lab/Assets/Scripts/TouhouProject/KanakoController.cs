@@ -39,10 +39,7 @@ public class KanakoController : MonoBehaviour
     void Update()
     {
 
-        if (gameControlScript.gameStart)
-        {
-            kanakoAnimator.SetTrigger("skillActive");
-        }
+        kanakoAnimator.SetTrigger("skillActive");
         if (!secondPhase)
         {
             if (currentHealth < 200 )

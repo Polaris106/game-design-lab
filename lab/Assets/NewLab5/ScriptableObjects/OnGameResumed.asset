@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f0c1952203d7b5409c54ae7b584fdc2, type: 3}
-  m_Name: SMBConstants
+  m_Script: {fileID: 11500000, guid: 7a878846614a44642bed9bf68728983f, type: 3}
+  m_Name: OnGameResumed
   m_EditorClassIdentifier: 
-  maxLives: 1
-  speed: 30
-  maxSpeed: 40
-  upSpeed: 25
-  deathImpulse: 15
