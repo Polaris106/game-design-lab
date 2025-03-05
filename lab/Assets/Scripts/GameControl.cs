@@ -59,69 +59,89 @@ public class GameControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mario == null)
+        if (!gamePaused)
         {
-            mario = GameObject.Find("Mario");
-        }
-        if (enteringScene && SceneManager.GetActiveScene().name == currentScene)
-        {
-            Debug.Log("position changed");
-            switch (prevScene)
+            Time.timeScale = 1.0f;
+            if (mario == null)
             {
-                case "FlappyBird":
-                    mario.transform.position = new Vector3(7.72f, -0.44f, 0.0f);
-                    break;
-                case "TouhouProject":
-                    mario.transform.position = new Vector3(35.47f, 7.1f, 0.0f);
-                    break;
-                default:
-
-                    break;
+                mario = GameObject.Find("Mario");
             }
-            enteringScene = false;
-        }
-        if (currentScene == "TouhouProject" && !musicPlayed)
-        {
-            musicPlayed = true;
-            gameAudio.Stop();
-            gameAudio.PlayOneShot(touhouProjectTheme);
-        }
-        else if (currentScene == "MarioScene")
-        {
-            canvas.SetActive(true);
-            if (!musicPlayed)
+            if (enteringScene && SceneManager.GetActiveScene().name == currentScene)
+            {
+                Debug.Log("position changed");
+                switch (prevScene)
+                {
+                    case "FlappyBird":
+                        mario.transform.position = new Vector3(7.72f, -0.44f, 0.0f);
+                        break;
+                    case "TouhouProject":
+                        mario.transform.position = new Vector3(35.47f, 7.1f, 0.0f);
+                        break;
+                    default:
+
+                        break;
+                }
+                enteringScene = false;
+            }
+            if (currentScene == "TouhouProject" && !musicPlayed)
             {
                 musicPlayed = true;
                 gameAudio.Stop();
-                gameAudio.PlayOneShot(marioTheme);
+                gameAudio.PlayOneShot(touhouProjectTheme);
+            }
+            else if (currentScene == "MarioScene")
+            {
                 canvas.SetActive(true);
+                if (!musicPlayed)
+                {
+                    musicPlayed = true;
+                    gameAudio.Stop();
+                    gameAudio.PlayOneShot(marioTheme);
+                    canvas.SetActive(true);
+                }
+            }
+
+
+            if (gameOver)
+            {
+                Time.timeScale = 0.0f;
+
+                //gameOverMenuPanel.SetActive(true);
+                restartButton.SetActive(false);
+                scoreTextObject.SetActive(false);
+            }
+            else if (!gameOver)
+            {
+                Time.timeScale = 1.0f;
+                //gameOverMenuPanel.SetActive(false);
+
+                restartButton.SetActive(true);
+                scoreTextObject.SetActive(true);
+                scoreTextGUI.text = "Score: " + gameScore.Value.ToString();
             }
         }
 
-
-        if (gameOver)
+        else
         {
             Time.timeScale = 0.0f;
-
-            //gameOverMenuPanel.SetActive(true);
-            restartButton.SetActive(false);
-            scoreTextObject.SetActive(false);
         }
-        else if (!gameOver)
-        {
-            Time.timeScale = 1.0f;
-            //gameOverMenuPanel.SetActive(false);
 
-            restartButton.SetActive(true);
-            scoreTextObject.SetActive(true);
-            scoreTextGUI.text = "Score: " + gameScore.Value.ToString();
-        }
 
     }
 
     public void SetGameOver()
     {
         gameOver = true;
+    }
+
+    public void SetGamePaused()
+    {
+        gamePaused = true;
+    }
+
+    public void SetGameResumed()
+    {
+        gamePaused = false;
     }
 
     public void PlayTouhouTheme2()

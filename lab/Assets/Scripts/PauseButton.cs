@@ -12,7 +12,6 @@ public class PauseButton : MonoBehaviour
     public void ButtonClick()
     {
         gamePause.Invoke();
-        Time.timeScale = 0.0f;
         pauseButton.SetActive(false);
     }
 

@@ -2,11 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FireFlowerPowerup : BasePowerup
 {
     // setup this object's type
     // instantiate variables
+    public UnityEvent onFirePowerup;
+
     protected override void Start()
     {
         base.Start(); // call base class Start()
@@ -46,6 +49,7 @@ public class FireFlowerPowerup : BasePowerup
     // interface implementation
     public override void ApplyPowerup(MonoBehaviour i)
     {
+        onFirePowerup.Invoke();
         // try
         MarioStateController mario;
         bool result = i.TryGetComponent<MarioStateController>(out mario);

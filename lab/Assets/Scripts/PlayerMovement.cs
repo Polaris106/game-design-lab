@@ -307,8 +307,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.CompareTag("GoombaWeakpoint") && alive && !onGroundState)
         {
-            gameScore.ApplyChange(1);
-            scoreText.text = "Score: " + gameScore.Value;
+            //gameScore.ApplyChange(1);
+            //scoreText.text = "Score: " + gameScore.Value;
         }
 
         if (other.gameObject.CompareTag("PipeTeleport"))
@@ -331,6 +331,23 @@ public class PlayerMovement : MonoBehaviour
     void PlayTransformSound()
     {
         marioAudio.PlayOneShot(marioTransformAudio);
+    }
+
+    public void SetFirePointsActive()
+    {
+        firePoint1.SetActive(true);
+        firePoint2.SetActive(true);
+        firePoint3.SetActive(true);
+    }
+
+    public void muteBackgroundMusic()
+    {
+        gameControl.GetComponent<GameControl>().gameAudio.mute = true;
+    }
+
+    public void resumeBackgroundMusic()
+    {
+        gameControl.GetComponent<GameControl>().gameAudio.mute = false;
     }
 
     public void ResetGame()

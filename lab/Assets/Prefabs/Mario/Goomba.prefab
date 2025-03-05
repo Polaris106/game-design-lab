@@ -195,6 +195,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  gameScore: {fileID: 11400000, guid: bad89b40915d93a41b66297d129335ca, type: 2}
 --- !u!95 &5851488508870548632
 Animator:
   serializedVersion: 5

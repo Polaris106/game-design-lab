@@ -11,6 +11,7 @@ public class GoombaMovement : MonoBehaviour
     public AudioSource goombaAudio;
     public AudioClip goombaDeathAudio;
     public UnityEvent damagePlayer;
+    public IntVariable gameScore;
 
     private float originalX;
     private float maxOffset = 5.0f;
@@ -102,6 +103,7 @@ public class GoombaMovement : MonoBehaviour
 
     public void Die()
     {
+        gameScore.ApplyChange(1);
         Destroy(gameObject);
     }
 
