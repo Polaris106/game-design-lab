@@ -87,7 +87,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                     ""id"": ""be5e2fa4-961f-4744-b520-3b42040c3c73"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 }
             ],

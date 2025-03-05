@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPrefabInScene: 3
   impulseForce: 3
-  degree: -10
+  degree: 10
   attackPrefab: {fileID: 8314464947770500971, guid: cb2ab2bbcfffede4b9ba2ced9ba784b9, type: 3}
   marioFaceRight: {fileID: 11400000, guid: 2ac3eeb782b193a499264f56817d5fe4, type: 2}
